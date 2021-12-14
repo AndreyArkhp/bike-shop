@@ -1,0 +1,22 @@
+.page {
+  max-width: 1440px;
+  min-width: 320px;
+  background: $color-backgroun-light;
+  &__centering {
+    margin: 0 auto;
+  }
+  &__content-center {
+    padding-inline-start: 120px;
+    padding-inline-end: 120px;
+    @include media("md") {
+      padding-inline-start: 18px;
+      padding-inline-end: 18px;
+    }
+  }
+  &__content-right {
+    padding-inline-start: 120px;
+    @include media("md") {
+      padding-inline-start: 18px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+//Fonts
+@mixin font-set($size, $lineHeight, $weight, $color) {
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: $size;
+  line-height: $lineHeight;
+  font-weight: $weight;
+  color: $color;
+}
+
+//Media-querys
+@mixin media($media) {
+  @each $name, $size in $sizes {
+    @if $media == $name {
+      @media screen and (max-width: $size) {
+        @content;
+      }
+    }
+  }
+}

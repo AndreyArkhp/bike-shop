@@ -1,0 +1,40 @@
+.header {
+  &__navigation {
+    padding-block-start: 28px;
+    padding-block-end: 28px;
+  }
+  &__menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    @include media("md") {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-block-start: 100px;
+    }
+  }
+  &__menu-link {
+    text-decoration: none;
+    transition: opacity 0.2s linear;
+    @include font-set(14px, 18px, 500, $color-title);
+    @include media("md") {
+      @include font-set(18px, 18px, 500, $color-title);
+    }
+  }
+  &__menu-link:hover {
+    opacity: 0.75;
+  }
+  &__menu-item {
+    margin-inline-end: 34px;
+    @include media("md") {
+      margin: 0;
+      margin-block-end: 32px;
+    }
+  }
+  &__menu-item:last-child {
+    margin: 0;
+  }
+}

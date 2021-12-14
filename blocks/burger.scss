@@ -1,0 +1,38 @@
+.burger {
+  display: none;
+  position: relative;
+  padding: 0;
+  margin-inline-start: auto;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: $color-backgroun-light;
+  cursor: pointer;
+  &__triple-lines::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 3px;
+    background: #151515;
+    box-shadow: 0 8px 0 #151515, 0 16px 0 #151515;
+    transition: opacity 0.2s linear;
+  }
+  &__close::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    background: no-repeat center url(../images/close.svg);
+    transition: opacity 0.2s linear;
+  }
+  &:hover::before {
+    opacity: 0.75;
+  }
+  @include media("md") {
+    display: block;
+  }
+}
