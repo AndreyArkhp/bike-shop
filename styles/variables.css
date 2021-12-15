@@ -1,0 +1,14 @@
+:root {
+  --color-page: #f4f4f4;
+  --color-switcher-bg: #fff;
+  --color-title: #151515;
+  --color-burger: #151515;
+}
+
+:root {
+  --left: 0;
+}
+
+:root {
+  --close-icon: url(../images/close.svg);
+}

@@ -1,0 +1,32 @@
+//Colors
+:root {
+  --color-page: #f4f4f4;
+  --color-switcher-bg: #fff;
+  --color-title: #151515;
+  --color-burger: #151515;
+}
+$color-bg: var(--color-page);
+$color-bg-switcher: var(--color-switcher-bg);
+$color-title: var(--color-title);
+$color-circle-green: #24b47e;
+$color-burger: var(--color-burger);
+
+//sizes media-querys
+$sizes: (
+  "xs": 320px,
+  "md": 768px,
+  "xl": 1024px,
+);
+
+//switcher-them
+//on:0, off:24px;
+:root {
+  --left: 0;
+}
+$on-off: var(--left);
+
+//url
+:root {
+  --close-icon: url(../images/close.svg);
+}
+$close-icon: var(--close-icon);

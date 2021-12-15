@@ -15,18 +15,39 @@
           type="button"
           aria-label="Открыть меню"
         ></button>
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Покрытия и градиенты</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Велосипеды</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Тренировки</a>
-          </li>
-        </ul>
+        <div class="header__menu-container page__centering">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Покрытия и градиенты</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Велосипеды</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Тренировки</a>
+            </li>
+          </ul>
+          <div class="switcher-thems page__centering">
+            <img
+              class="switcher-thems__image switcher-thems__image_type_sun"
+              src="./images/sun.svg"
+              alt="День"
+            />
+            <input
+              class="switcher-thems__checkbox"
+              type="checkbox"
+              aria-label="Включить или выключить темную тему"
+            />
+            <span class="switcher-thems__switcher"></span>
+            <img
+              class="switcher-thems__image switcher-thems__image_type_month"
+              src="./images/month.svg"
+              alt="Ночь"
+            />
+          </div>
+        </div>
       </nav>
     </header>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

@@ -1,0 +1,36 @@
+.switcher-thems {
+  width: 140px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  &__image {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__switcher {
+    width: 44px;
+    height: 24px;
+    background: $color-bg-switcher;
+    border-radius: 9999px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      border-radius: 50%;
+      left: $on-off;
+      background: $color-circle-green;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__checkbox {
+    display: none;
+  }
+  @include media("md") {
+    display: flex;
+  }
+}

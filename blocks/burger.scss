@@ -6,7 +6,7 @@
   width: 22px;
   height: 22px;
   border: none;
-  background: $color-backgroun-light;
+  background: $color-bg;
   cursor: pointer;
   &__triple-lines::before {
     content: "";
@@ -15,8 +15,8 @@
     right: 0;
     width: 22px;
     height: 3px;
-    background: #151515;
-    box-shadow: 0 8px 0 #151515, 0 16px 0 #151515;
+    background: $color-burger;
+    box-shadow: 0 8px 0 $color-burger, 0 16px 0 $color-burger;
     transition: opacity 0.2s linear;
   }
   &__close::before {
@@ -26,7 +26,7 @@
     right: 0;
     width: 22px;
     height: 22px;
-    background: no-repeat center url(../images/close.svg);
+    background: no-repeat center $close-icon;
     transition: opacity 0.2s linear;
   }
   &:hover::before {

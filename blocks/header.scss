@@ -16,6 +16,14 @@
       margin-block-start: 100px;
     }
   }
+  &__menu-container {
+    @include media("md") {
+      display: none;
+    }
+  }
+  &__menu-container_active {
+    display: block;
+  }
   &__menu-link {
     text-decoration: none;
     transition: opacity 0.2s linear;
@@ -31,10 +39,13 @@
     margin-inline-end: 34px;
     @include media("md") {
       margin: 0;
-      margin-block-end: 32px;
+      margin-block-end: 31px;
     }
   }
   &__menu-item:last-child {
     margin: 0;
+    @include media("md") {
+      margin-block-end: 304px;
+    }
   }
 }
