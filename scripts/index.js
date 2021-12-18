@@ -5,8 +5,11 @@ const headerMenuContainer = document.querySelector(".header__menu-container");
 const switcherThems = document.querySelector(".switcher-thems__switcher");
 
 //function
-function changeCustomProperties(prop, val) {
+function setCustomProperties(prop, val) {
   document.documentElement.style.setProperty(prop, val);
+}
+function delCustomProperties() {
+  document.documentElement.style = "";
 }
 
 //Listeners
@@ -22,27 +25,24 @@ burgerBtn.addEventListener("click", () => {
   }
 });
 
+//chenge theme
 switcherThems.addEventListener("click", () => {
   const sunImage = document.querySelector(".switcher-thems__image_type_sun");
   const monthImage = document.querySelector(".switcher-thems__image_type_month");
-  if (!switcherThems.hasAttribute("data-them")) {
-    switcherThems.setAttribute("data-them", "dark");
-    changeCustomProperties("--left", "24px");
-    changeCustomProperties("--color-page", "#333");
-    changeCustomProperties("--color-title", "#fff");
-    changeCustomProperties("--close-icon", "url(../images/close-white.svg)");
-    changeCustomProperties("--color-switcher-bg", "#545454");
-    changeCustomProperties("--color-burger", "#fff");
+  const switchCheckbox = document.querySelector(".switcher-thems__checkbox");
+  if (!switchCheckbox.checked) {
+    setCustomProperties("--left", "24px");
+    setCustomProperties("--color-page", "#333");
+    setCustomProperties("--close-icon", "url(../images/close-white.svg)");
+    setCustomProperties("--color-switcher-bg", "#545454");
+    setCustomProperties("--color-black", "#fff");
+    setCustomProperties("--color-grey", "#E6E6E6");
+    setCustomProperties("--color-bike-name-line", "#707070");
     sunImage.setAttribute("src", "./images/sun-dark.svg");
     monthImage.setAttribute("src", "./images/month-dark.svg");
   } else {
-    switcherThems.removeAttribute("data-them", "dark");
-    changeCustomProperties("--left", "0");
-    changeCustomProperties("--color-page", "#f4f4f4");
-    changeCustomProperties("--color-title", "#151515");
-    changeCustomProperties("--close-icon", "url(../images/close.svg)");
-    changeCustomProperties("--color-switcher-bg", "#fff");
-    changeCustomProperties("--color-burger", "#151515");
+    delCustomProperties();
+    setCustomProperties("--close-icon", "url(../images/close.svg)");
     sunImage.setAttribute("src", "./images/sun.svg");
     monthImage.setAttribute("src", "./images/month.svg");
   }

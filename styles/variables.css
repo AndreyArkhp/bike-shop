@@ -1,8 +1,9 @@
 :root {
   --color-page: #f4f4f4;
   --color-switcher-bg: #fff;
-  --color-title: #151515;
-  --color-burger: #151515;
+  --color-black: #151515;
+  --color-grey: #222;
+  --color-bike-name-line: #d7d4d4;
 }
 
 :root {
@@ -10,5 +11,5 @@
 }
 
 :root {
-  --close-icon: url(../images/close.svg);
+  --close-icon: url("../images/close.svg");
 }

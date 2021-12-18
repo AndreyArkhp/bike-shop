@@ -1,10 +1,11 @@
 //Fonts
-@mixin font-set($size, $lineHeight, $weight, $color) {
+@mixin font-set($size, $lineHeight, $weight, $color, $ls) {
   font-family: "Inter", Helvetica, sans-serif;
   font-size: $size;
   line-height: $lineHeight;
   font-weight: $weight;
   color: $color;
+  letter-spacing: $ls;
 }
 
 //Media-querys

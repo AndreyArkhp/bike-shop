@@ -1,12 +1,12 @@
 .burger {
   display: none;
   position: relative;
-  padding: 0;
+  @extend %reset-margin-padding;
   margin-inline-start: auto;
   width: 22px;
   height: 22px;
   border: none;
-  background: $color-bg;
+  background: var(--color-page);
   cursor: pointer;
   &__triple-lines::before {
     content: "";
@@ -15,8 +15,8 @@
     right: 0;
     width: 22px;
     height: 3px;
-    background: $color-burger;
-    box-shadow: 0 8px 0 $color-burger, 0 16px 0 $color-burger;
+    background: var(--color-black);
+    box-shadow: 0 8px 0 var(--color-black), 0 16px 0 var(--color-black);
     transition: opacity 0.2s linear;
   }
   &__close::before {
@@ -26,7 +26,7 @@
     right: 0;
     width: 22px;
     height: 22px;
-    background: no-repeat center $close-icon;
+    background: no-repeat center #{var(--close-icon)};
     transition: opacity 0.2s linear;
   }
   &:hover::before {

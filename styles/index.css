@@ -26,8 +26,9 @@
 :root {
   --color-page: #f4f4f4;
   --color-switcher-bg: #fff;
-  --color-title: #151515;
-  --color-burger: #151515;
+  --color-black: #151515;
+  --color-grey: #222;
+  --color-bike-name-line: #d7d4d4;
 }
 
 :root {
@@ -35,13 +36,24 @@
 }
 
 :root {
-  --close-icon: url(../images/close.svg);
+  --close-icon: url("../images/close.svg");
+}
+
+.button-gradient__button, .bike-selection__text, .bike-selection__bike-name, .bike-selection__title, .burger, .header__menu {
+  margin: 0;
+  padding: 0;
+}
+
+.button-gradient__button::before {
+  background: linear-gradient(to right, #319e75 0%, #319e75 50%, #24b47e 50%, #24b47e 100%);
 }
 
 .page {
+  background: var(--color-page);
+}
+.page__content {
   max-width: 1440px;
   min-width: 320px;
-  background: var(--color-page);
 }
 .page__centering {
   margin: 0 auto;
@@ -62,19 +74,29 @@
 @media screen and (max-width: 768px) {
   .page__content-right {
     padding-inline-start: 18px;
+    padding-inline-end: 18px;
+  }
+}
+.page__section-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 650px) minmax(250px, 610px);
+  grid-column-gap: 60px;
+}
+@media screen and (max-width: 768px) {
+  .page__section-grid {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .header__navigation {
-  padding-block-start: 28px;
-  padding-block-end: 28px;
+  padding-block-start: 25px;
+  padding-block-end: 27px;
 }
 .header__menu {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  margin: 0;
-  padding: 0;
 }
 @media screen and (max-width: 768px) {
   .header__menu {
@@ -99,7 +121,8 @@
   font-size: 14px;
   line-height: 18px;
   font-weight: 500;
-  color: var(--color-title);
+  color: var(--color-black);
+  letter-spacing: 0;
 }
 @media screen and (max-width: 768px) {
   .header__menu-link {
@@ -107,7 +130,8 @@
     font-size: 18px;
     line-height: 18px;
     font-weight: 500;
-    color: var(--color-title);
+    color: var(--color-black);
+    letter-spacing: 0;
   }
 }
 .header__menu-link:hover {
@@ -134,7 +158,6 @@
 .burger {
   display: none;
   position: relative;
-  padding: 0;
   margin-inline-start: auto;
   width: 22px;
   height: 22px;
@@ -149,8 +172,8 @@
   right: 0;
   width: 22px;
   height: 3px;
-  background: var(--color-burger);
-  box-shadow: 0 8px 0 var(--color-burger), 0 16px 0 var(--color-burger);
+  background: var(--color-black);
+  box-shadow: 0 8px 0 var(--color-black), 0 16px 0 var(--color-black);
   transition: opacity 0.2s linear;
 }
 .burger__close::before {
@@ -178,6 +201,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 6px 0;
+  position: relative;
 }
 .switcher-thems__image {
   display: inline-block;
@@ -203,10 +227,286 @@
   height: 20px;
 }
 .switcher-thems__checkbox {
-  display: none;
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 @media screen and (max-width: 768px) {
   .switcher-thems {
     display: flex;
+  }
+}
+
+.bike-selection__title {
+  max-width: 330px;
+  height: fit-content;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-block-start: 80px;
+  margin-block-end: 50px;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 55px;
+  line-height: 60px;
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: 0;
+}
+@media screen and (max-width: 1280px) {
+  .bike-selection__title {
+    max-width: 300px;
+    font-size: 50px;
+    line-height: 55px;
+    margin-block-start: 50px;
+    margin-block-end: 25px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection__title {
+    max-width: 240px;
+    font-size: 40px;
+    line-height: 45px;
+    margin-block-start: 20px;
+    margin-block-end: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .bike-selection__title {
+    font-family: "Inter", Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: -0.5px;
+    margin-block-start: 40px;
+    margin-block-end: 40px;
+    max-width: 170px;
+  }
+}
+.bike-selection__image {
+  display: block;
+  width: 100%;
+  margin-block-start: 20px;
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .bike-selection__image {
+    margin: 0;
+  }
+}
+.bike-selection__image-container {
+  grid-row: 1/6;
+  grid-column: 2;
+  max-height: 836px;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .bike-selection__image-container {
+    max-height: fit-content;
+    margin: 0 0 40px 30px;
+  }
+}
+.bike-selection__card-stiky {
+  position: absolute;
+  bottom: 7%;
+  left: -32.5%;
+  height: 51.5%;
+  width: 130%;
+}
+@media screen and (max-width: 1280px) {
+  .bike-selection__card-stiky {
+    left: -36.6%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection__card-stiky {
+    left: -46.5%;
+    bottom: 14%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .bike-selection__card-stiky {
+    left: -11.5%;
+    bottom: 5%;
+    width: 100%;
+  }
+}
+.bike-selection__bike-name {
+  grid-row: 4;
+  grid-column: 1;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--color-black);
+  letter-spacing: 0;
+  position: relative;
+}
+.bike-selection__bike-name::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 220px;
+  width: 132px;
+  height: 2px;
+  background: var(--color-bike-name-line);
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection__bike-name {
+    display: none;
+  }
+}
+.bike-selection__text {
+  grid-row: 2;
+  grid-column: 1;
+  max-width: 460px;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--color-grey);
+  letter-spacing: 0;
+  opacity: 0.7;
+  margin-block-end: 50px;
+}
+@media screen and (max-width: 1280px) {
+  .bike-selection__text {
+    margin-block-end: 35px;
+    max-width: 360px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection__text {
+    font-size: 17px;
+    line-height: 25px;
+    max-width: 250px;
+    margin-block-end: calc(50vw - 340px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .bike-selection__text {
+    min-width: 100%;
+    font-size: 12px;
+    line-height: 18px;
+    margin-block-end: 40px;
+  }
+}
+
+.button-gradient {
+  margin-block-end: 170px;
+  grid-row: 3;
+  width: 180px;
+  height: fit-content;
+}
+@media screen and (max-width: 1280px) {
+  .button-gradient {
+    margin-block-end: 6vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .button-gradient {
+    margin-block-end: 40px;
+    width: 100%;
+  }
+}
+.button-gradient__button {
+  border: none;
+  width: 180px;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  min-height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.button-gradient__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  transition: left 0.3s linear;
+  z-index: -1;
+}
+.button-gradient__button:hover::before {
+  left: 0;
+}
+@media screen and (max-width: 768px) {
+  .button-gradient__button {
+    min-height: 46px;
+    width: 100%;
+  }
+}
+
+.card {
+  max-width: 440px;
+  box-sizing: border-box;
+  background: #f4f4f4;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  padding: 20px 50px;
+}
+.card__bike-fix {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 30px;
+  object-fit: cover;
+}
+.card__stiky {
+  position: sticky;
+  top: 0;
+}
+@media screen and (max-width: 1280px) {
+  .card__stiky {
+    max-width: 365px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .card__stiky {
+    max-width: 290px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card__stiky {
+    max-width: 60vw;
+    padding: 14px 35px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .card__stiky {
+    max-width: 234px;
+    padding: 10.67px 26.59px;
+  }
+}
+.card__signature::before {
+  content: "Cannondale Systemsix";
+  position: absolute;
+  bottom: 5px;
+  left: 45px;
+  display: none;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--color-black);
+  letter-spacing: 0;
+}
+@media screen and (max-width: 1024px) {
+  .card__signature::before {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card__signature::before {
+    display: none;
   }
 }

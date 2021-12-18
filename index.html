@@ -7,47 +7,83 @@
     <title>Bike-shop</title>
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
-  <body class="page page__centering">
-    <header class="header">
-      <nav class="page__content-center header__navigation">
-        <button
-          class="burger burger__triple-lines"
-          type="button"
-          aria-label="Открыть меню"
-        ></button>
-        <div class="header__menu-container page__centering">
-          <ul class="header__menu">
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Покрытия и градиенты</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Велосипеды</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Тренировки</a>
-            </li>
-          </ul>
-          <div class="switcher-thems page__centering">
-            <img
-              class="switcher-thems__image switcher-thems__image_type_sun"
-              src="./images/sun.svg"
-              alt="День"
-            />
-            <input
-              class="switcher-thems__checkbox"
-              type="checkbox"
-              aria-label="Включить или выключить темную тему"
-            />
-            <span class="switcher-thems__switcher"></span>
-            <img
-              class="switcher-thems__image switcher-thems__image_type_month"
-              src="./images/month.svg"
-              alt="Ночь"
-            />
+  <body class="page">
+    <div class="page__content page__centering">
+      <header class="header">
+        <nav class="page__content-center header__navigation">
+          <button
+            class="burger burger__triple-lines"
+            type="button"
+            aria-label="Открыть меню"
+          ></button>
+          <div class="header__menu-container page__centering">
+            <ul class="header__menu">
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">Покрытия и градиенты</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">Велосипеды</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">Тренировки</a>
+              </li>
+            </ul>
+            <div class="switcher-thems page__centering">
+              <img
+                class="switcher-thems__image switcher-thems__image_type_sun"
+                src="./images/sun.svg"
+                alt="День"
+              />
+              <input
+                id="switch-input"
+                class="switcher-thems__checkbox"
+                type="checkbox"
+                aria-label="Включить или выключить темную тему"
+              />
+              <label for="switch-input" class="switcher-thems__switcher"></label>
+              <img
+                class="switcher-thems__image switcher-thems__image_type_month"
+                src="./images/month.svg"
+                alt="Ночь"
+              />
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
-    <script src="./scripts/index.js"></script>
+        </nav>
+      </header>
+      <main class="content">
+        <section class="bike-selection page__content-right page__section-grid">
+          <h1 class="bike-selection__title">Шоссе, ТТ и Грэвел</h1>
+          <div class="bike-selection__image-container">
+            <img
+              class="bike-selection__image"
+              src="./images/photo/forest.jpg"
+              alt="Грунтовая дорога в лесу"
+            />
+
+            <div class="bike-selection__card-stiky">
+              <div class="card card__stiky card__signature">
+                <img
+                  src="./images/photo/bike-stiky.png"
+                  alt="Велосипед cannondale"
+                  class="card__bike-fix"
+                />
+              </div>
+            </div>
+          </div>
+
+          <p class="bike-selection__text">
+            Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным
+            маршрутам&nbsp;&mdash; нужно только определиться с&nbsp;выбором велосипеда
+            и&nbsp;отправиться в&nbsp;путь.
+          </p>
+
+          <div class="button-gradient">
+            <button class="button-gradient__button">Подробнее</button>
+          </div>
+          <p class="bike-selection__bike-name">Cannondale Systemsix</p>
+        </section>
+      </main>
+      <script src="./scripts/index.js"></script>
+    </div>
   </body>
 </html>

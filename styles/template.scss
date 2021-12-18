@@ -1,0 +1,10 @@
+//reset margin and padding
+%reset-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+//Gradient for button
+%button-hover {
+  background: linear-gradient(to right, #319e75 0%, #319e75 50%, #24b47e 50%, #24b47e 100%);
+}

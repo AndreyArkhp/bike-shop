@@ -1,7 +1,9 @@
 .page {
-  max-width: 1440px;
-  min-width: 320px;
-  background: $color-bg;
+  background: var(--color-page);
+  &__content {
+    max-width: 1440px;
+    min-width: 320px;
+  }
   &__centering {
     margin: 0 auto;
   }
@@ -17,6 +19,16 @@
     padding-inline-start: 120px;
     @include media("md") {
       padding-inline-start: 18px;
+      padding-inline-end: 18px;
+    }
+  }
+  &__section-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 650px) minmax(250px, 610px);
+    grid-column-gap: 60px;
+    @include media("md") {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
