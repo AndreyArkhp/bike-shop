@@ -1,10 +1,14 @@
 .bike-selection {
+  padding-block-start: 20px;
+  @include media("md") {
+    padding-block-start: 0;
+  }
   &__title {
     max-width: 330px;
     height: fit-content;
     grid-column: 1/2;
     grid-row: 1/2;
-    margin-block-start: 80px;
+    margin-block-start: 60px;
     margin-block-end: 50px;
     @extend %reset-margin-padding;
     @include font-set(55px, 60px, 700, var(--color-black), 0);
@@ -32,7 +36,6 @@
   &__image {
     display: block;
     width: 100%;
-    margin-block-start: 20px;
     object-fit: cover;
     @include media("md") {
       margin: 0;

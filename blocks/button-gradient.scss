@@ -38,6 +38,8 @@
     @include media("md") {
       min-height: 46px;
       width: 100%;
+      font-size: 13px;
+      line-height: 19px;
     }
   }
 }
