@@ -114,28 +114,13 @@ arrowRightSlider.addEventListener("click", () => {
   changeImageSlider("right");
 });
 
-let flag = true;
-let timeloop;
 window.addEventListener("resize", () => {
-  // window.location.reload();
-
-  let rtime = new Date();
-  if (flag) {
-    flag = false;
-    timeloop = setInterval(() => {
-      if (new Date() - rtime > 100) myAction();
-    }, 100);
-  }
-});
-
-function myAction() {
-  clearInterval(timeloop);
-  flag = true;
-  // window.location.reload();
   imageWidth = parseFloat(getComputedStyle(imagesSlider[0]).width);
   positionImagesSlider = [];
   for (let i = -6; i <= 6; i++) {
     positionImagesSlider.push(imageWidth * i + 40 * i);
   }
-  imageContainerSlider.style.transform = `translate(${positionImagesSlider[3]}px,0)`;
-}
+  imageContainerSlider.style.transition = "none";
+  let x = positionImagesSlider[positionVisibleSliderImage];
+  imageContainerSlider.style.transform = `translate(${x}px,0)`;
+});
