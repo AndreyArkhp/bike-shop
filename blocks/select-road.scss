@@ -1,0 +1,25 @@
+.select-road {
+  &__title {
+    @extend %reset-margin-padding;
+    @include font-set(55px, 60px, 700, var(--color-black), -0.5px);
+    margin-block-start: 60px;
+    margin-block-end: 50px;
+    @include media("xl") {
+      margin-block-start: 40px;
+      margin-block-end: 40px;
+      font-size: 45px;
+      line-height: 50px;
+    }
+  }
+  &__text {
+    @extend %reset-margin-padding;
+    @include font-set(18px, 28px, 400, var(--color-grey), 0);
+    opacity: 0.7;
+    margin-block-end: 80px;
+    @include media("xl") {
+      margin-block-end: 60px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

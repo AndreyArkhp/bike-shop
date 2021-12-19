@@ -4,6 +4,8 @@
   --color-black: #151515;
   --color-grey: #222;
   --color-bike-name-line: #d7d4d4;
+  --color-arrow-bg: rgba(235, 235, 235, 1);
+  --color-arrow-bg-opacity: rgba(235, 235, 235, 0.6);
 }
 
 :root {

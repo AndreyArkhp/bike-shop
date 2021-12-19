@@ -1,0 +1,94 @@
+.slider {
+  &__text-container {
+    width: 35%;
+    display: none;
+    &_visible {
+      display: block;
+    }
+  }
+  &__image {
+    width: 49%;
+    margin-inline-end: 40px;
+  }
+  &__image-visible {
+    width: 100%;
+    overflow: hidden;
+    margin-block-end: 50px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 16px;
+      left: 0;
+      width: 100px;
+      height: 40px;
+      background: no-repeat url(../images/green-bg.svg);
+      z-index: 1;
+      @include media("xl") {
+        left: -15px;
+        height: 34px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 14px;
+      width: 100px;
+      height: 40px;
+      background: no-repeat url(../images/highway-line.svg);
+      z-index: 2;
+      @include media("xl") {
+        left: 10px;
+        bottom: 1px;
+      }
+    }
+  }
+  &__image-container {
+    display: flex;
+    width: 100%;
+    transform: translate(0, 0);
+    transition: transform 1s ease-in-out;
+  }
+
+  &__button {
+    @extend %reset-margin-padding;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-arrow-bg);
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+    margin-inline-end: 20px;
+    &:hover {
+      background-color: var(--color-arrow-bg-opacity);
+    }
+    &:hover::before {
+      opacity: 0.75;
+    }
+  }
+  &__button-left {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 40%;
+      width: 100%;
+      height: 100%;
+      background: no-repeat url(../images/arrow-left.svg);
+    }
+  }
+  &__button-right {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 40%;
+      width: 100%;
+      height: 100%;
+      background: no-repeat url(../images/arrow-right.svg);
+    }
+  }
+}

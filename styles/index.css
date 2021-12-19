@@ -29,6 +29,8 @@
   --color-black: #151515;
   --color-grey: #222;
   --color-bike-name-line: #d7d4d4;
+  --color-arrow-bg: rgba(235, 235, 235, 1);
+  --color-arrow-bg-opacity: rgba(235, 235, 235, 0.6);
 }
 
 :root {
@@ -39,7 +41,7 @@
   --close-icon: url("../images/close.svg");
 }
 
-.quote__author-profession, .quote__quote-text, .quote__quote-container, .button-gradient__button, .bike-selection__text, .bike-selection__bike-name, .bike-selection__title, .burger, .header__menu {
+.slider__button, .select-road__text, .select-road__title, .quote__author-profession, .quote__quote-text, .quote__quote-container, .button-gradient__button, .bike-selection__text, .bike-selection__bike-name, .bike-selection__title, .burger, .header__menu {
   margin: 0;
   padding: 0;
 }
@@ -640,4 +642,131 @@
     font-size: 10px;
     line-height: 16px;
   }
+}
+
+.select-road__title {
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 55px;
+  line-height: 60px;
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: -0.5px;
+  margin-block-start: 60px;
+  margin-block-end: 50px;
+}
+@media screen and (max-width: 1024px) {
+  .select-road__title {
+    margin-block-start: 40px;
+    margin-block-end: 40px;
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+.select-road__text {
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--color-grey);
+  letter-spacing: 0;
+  opacity: 0.7;
+  margin-block-end: 80px;
+}
+@media screen and (max-width: 1024px) {
+  .select-road__text {
+    margin-block-end: 60px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.slider__text-container {
+  width: 35%;
+  display: none;
+}
+.slider__text-container_visible {
+  display: block;
+}
+.slider__image {
+  width: 49%;
+  margin-inline-end: 40px;
+}
+.slider__image-visible {
+  width: 100%;
+  overflow: hidden;
+  margin-block-end: 50px;
+  position: relative;
+}
+.slider__image-visible::before {
+  content: "";
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100px;
+  height: 40px;
+  background: no-repeat url(../images/green-bg.svg);
+  z-index: 1;
+}
+@media screen and (max-width: 1024px) {
+  .slider__image-visible::before {
+    left: -15px;
+    height: 34px;
+  }
+}
+.slider__image-visible::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 14px;
+  width: 100px;
+  height: 40px;
+  background: no-repeat url(../images/highway-line.svg);
+  z-index: 2;
+}
+@media screen and (max-width: 1024px) {
+  .slider__image-visible::after {
+    left: 10px;
+    bottom: 1px;
+  }
+}
+.slider__image-container {
+  display: flex;
+  width: 100%;
+  transform: translate(0, 0);
+  transition: transform 1s ease-in-out;
+}
+.slider__button {
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-arrow-bg);
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+  margin-inline-end: 20px;
+}
+.slider__button:hover {
+  background-color: var(--color-arrow-bg-opacity);
+}
+.slider__button:hover::before {
+  opacity: 0.75;
+}
+.slider__button-left::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 100%;
+  height: 100%;
+  background: no-repeat url(../images/arrow-left.svg);
+}
+.slider__button-right::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 100%;
+  height: 100%;
+  background: no-repeat url(../images/arrow-right.svg);
 }
