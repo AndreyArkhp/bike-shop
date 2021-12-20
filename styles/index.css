@@ -39,6 +39,11 @@
 
 :root {
   --close-icon: url("../images/close.svg");
+  --road-icon: url("../images/highway-line.svg");
+}
+
+:root {
+  --time-change-image: 0.4s;
 }
 
 .slider__button, .select-road__text, .select-road__title, .quote__author-profession, .quote__quote-text, .quote__quote-container, .button-gradient__button, .bike-selection__text, .bike-selection__bike-name, .bike-selection__title, .burger, .header__menu {
@@ -716,24 +721,18 @@
 .slider__image-visible::after {
   content: "";
   position: absolute;
-  bottom: 4px;
+  bottom: 24px;
   left: 14px;
   width: 100px;
   height: 40px;
-  background: no-repeat url(../images/highway-line.svg);
+  background: no-repeat left bottom var(--road-icon);
   z-index: 2;
-}
-@media screen and (max-width: 1024px) {
-  .slider__image-visible::after {
-    left: 10px;
-    bottom: 1px;
-  }
 }
 .slider__image-container {
   display: flex;
   width: 100%;
   transform: translate(0, 0);
-  transition: transform 1s ease-in-out;
+  transition: transform var(--time-change-image) ease-in-out;
 }
 .slider__button {
   border: none;

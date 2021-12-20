@@ -33,6 +33,13 @@ $sizes: (
 //url
 :root {
   --close-icon: url("../images/close.svg");
+  --road-icon: url("../images/highway-line.svg");
 }
 
+//size button
 $width-button: 180px;
+
+//time to change of image
+:root {
+  --time-change-image: 0.4s;
+}

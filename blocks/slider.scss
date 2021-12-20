@@ -32,23 +32,19 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: 4px;
+      bottom: 24px;
       left: 14px;
       width: 100px;
       height: 40px;
-      background: no-repeat url(../images/highway-line.svg);
+      background: no-repeat left bottom #{var(--road-icon)};
       z-index: 2;
-      @include media("xl") {
-        left: 10px;
-        bottom: 1px;
-      }
     }
   }
   &__image-container {
     display: flex;
     width: 100%;
     transform: translate(0, 0);
-    transition: transform 1s ease-in-out;
+    transition: transform var(--time-change-image) ease-in-out;
   }
 
   &__button {
