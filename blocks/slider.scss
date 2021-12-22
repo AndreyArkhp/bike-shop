@@ -1,43 +1,107 @@
 .slider {
-  &__text-container {
-    width: 35%;
+  &__title {
+    @extend %reset-margin-padding;
+    @include font-set(55px, 60px, 700, var(--color-black), -0.5px);
+    margin-block-start: 60px;
+    margin-block-end: 50px;
     display: none;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    @include media("xl") {
+      margin-block-start: 40px;
+      margin-block-end: 40px;
+      font-size: 45px;
+      line-height: 50px;
+    }
+    @include media("md") {
+      font-size: 40px;
+      line-height: 45px;
+    }
+    @include media("xs") {
+      font-size: 32px;
+      line-height: 40px;
+    }
     &_visible {
       display: block;
     }
   }
+  &__text {
+    @extend %reset-margin-padding;
+    @include font-set(18px, 28px, 400, var(--color-grey), 0);
+    opacity: 0.7;
+    margin-block-end: 80px;
+    display: none;
+    grid-row: 3/4;
+    grid-column: 1/3;
+    max-width: 450px;
+    @include media("xl") {
+      margin-block-end: 60px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include media("md") {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include media("xs") {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    &_visible {
+      display: block;
+    }
+  }
+
   &__image {
     width: 49%;
     margin-inline-end: 40px;
+    display: block;
+    @include media("md") {
+      width: 100%;
+    }
   }
   &__image-visible {
     width: 100%;
     overflow: hidden;
     margin-block-end: 50px;
     position: relative;
+    grid-row: 2/3;
+    grid-column: 1/3;
+    @include media("md") {
+      margin-block-end: 40px;
+    }
     &::before {
       content: "";
       position: absolute;
-      bottom: 16px;
+      bottom: 14px;
       left: 0;
       width: 100px;
       height: 40px;
       background: no-repeat url(../images/green-bg.svg);
       z-index: 1;
       @include media("xl") {
-        left: -15px;
         height: 34px;
+      }
+      @include media("xs") {
+        width: 70px;
+        height: 30px;
+        bottom: 11px;
       }
     }
     &::after {
       content: "";
       position: absolute;
       bottom: 24px;
-      left: 14px;
-      width: 100px;
-      height: 40px;
+      left: 15px;
+      width: 50px;
+      height: 15px;
       background: no-repeat left bottom #{var(--road-icon)};
       z-index: 2;
+      @include media("xs") {
+        bottom: 19px;
+        left: 10px;
+        width: 35px;
+      }
     }
   }
   &__image-container {
@@ -47,6 +111,16 @@
     transition: transform var(--time-change-image) ease-in-out;
   }
 
+  &__arrows-container {
+    grid-row: 1/2;
+    grid-column: 2/3;
+
+    @include media("md") {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
   &__button {
     @extend %reset-margin-padding;
     border: none;
@@ -58,6 +132,19 @@
     cursor: pointer;
     transition: opacity 0.2s linear;
     margin-inline-end: 20px;
+    &:last-child {
+      margin: 0;
+    }
+    @include media("md") {
+      width: 35px;
+      height: 35px;
+      margin-inline-end: 15px;
+    }
+    @include media("xs") {
+      width: 24px;
+      height: 24px;
+      margin-inline-end: 10px;
+    }
     &:hover {
       background-color: var(--color-arrow-bg-opacity);
     }
@@ -69,22 +156,46 @@
     &::before {
       content: "";
       position: absolute;
-      top: 30%;
-      left: 40%;
-      width: 100%;
-      height: 100%;
+      top: 18px;
+      left: 18px;
+      width: 16px;
+      height: 16px;
       background: no-repeat url(../images/arrow-left.svg);
+      @include media("md") {
+        top: 10px;
+        left: 12px;
+      }
+      @include media("xs") {
+        top: 6px;
+        left: 7px;
+        width: 12px;
+        height: 12px;
+      }
     }
   }
   &__button-right {
     &::before {
       content: "";
       position: absolute;
-      top: 30%;
-      left: 40%;
-      width: 100%;
-      height: 100%;
+      top: 18px;
+      left: 21px;
+      width: 16px;
+      height: 16px;
       background: no-repeat url(../images/arrow-right.svg);
+      @include media("md") {
+        top: 10px;
+        left: 15px;
+      }
+      @include media("xs") {
+        top: 6px;
+        left: 9px;
+        width: 12px;
+        height: 12px;
+      }
     }
+  }
+  @include media("md") {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

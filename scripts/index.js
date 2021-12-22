@@ -5,7 +5,8 @@ const headerMenuContainer = document.querySelector(".header__menu-container");
 const switcherThems = document.querySelector(".switcher-thems__switcher");
 const arrowLeftSlider = document.querySelector(".slider__button-left");
 const arrowRightSlider = document.querySelector(".slider__button-right");
-const textsSlider = document.querySelectorAll(".slider__text-container");
+const titleSlider = document.querySelectorAll(".slider__title");
+const textSlider = document.querySelectorAll(".slider__text");
 const imagesSlider = Array.from(document.querySelectorAll(".slider__image"));
 const imageContainerSlider = document.querySelector(".slider__image-container");
 const timeChangeImage =
@@ -72,7 +73,8 @@ for (let i = -6; i <= 6; i++) {
 resetPositionImageContainer(timeChangeImage);
 
 function changeTextSlider(mathStr) {
-  textsSlider[positionVisibleSliderText].classList.remove("slider__text-container_visible");
+  titleSlider[positionVisibleSliderText].classList.remove("slider__title_visible");
+  textSlider[positionVisibleSliderText].classList.remove("slider__text_visible");
 
   if (mathStr === "plus") {
     positionVisibleSliderText < 2 ? positionVisibleSliderText++ : (positionVisibleSliderText = 0);
@@ -80,7 +82,8 @@ function changeTextSlider(mathStr) {
     positionVisibleSliderText === 0 ? (positionVisibleSliderText = 2) : positionVisibleSliderText--;
   }
 
-  textsSlider[positionVisibleSliderText].classList.add("slider__text-container_visible");
+  titleSlider[positionVisibleSliderText].classList.add("slider__title_visible");
+  textSlider[positionVisibleSliderText].classList.add("slider__text_visible");
   changeIconRoadSlider(positionVisibleSliderText);
 }
 
