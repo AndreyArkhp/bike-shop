@@ -4,6 +4,13 @@
   padding: 0;
 }
 
+//reset button
+%reset-button {
+  @extend %reset-margin-padding;
+  border: none;
+  background: transparent;
+}
+
 //Gradient for button
 %button-hover {
   background: linear-gradient(to right, #319e75 0%, #319e75 50%, #24b47e 50%, #24b47e 100%);

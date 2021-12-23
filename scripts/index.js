@@ -9,6 +9,11 @@ const titleSlider = document.querySelectorAll(".slider__title");
 const textSlider = document.querySelectorAll(".slider__text");
 const imagesSlider = Array.from(document.querySelectorAll(".slider__image"));
 const imageContainerSlider = document.querySelector(".slider__image-container");
+const menuBikeCards = document.querySelectorAll(".bike-cards__list-button");
+const containerBikeCards = document.querySelectorAll(".bike-cards__image-container");
+const selectBikeCards = document.querySelector(".bike-cards__navigation-select");
+const buttonCarouselBikeCards = document.querySelectorAll(".bike-cards__button-link");
+
 const timeChangeImage =
   parseFloat(getComputedStyle(imageContainerSlider).getPropertyValue("--time-change-image")) * 1000;
 const iconsRoadSlider = [
@@ -16,6 +21,11 @@ const iconsRoadSlider = [
   "../images/gravel-line.svg",
   "../images/tt-line.svg",
 ];
+const bikeCardsObj = {
+  highway: containerBikeCards[0],
+  gravel: containerBikeCards[1],
+  tt: containerBikeCards[2],
+};
 
 //function
 function setCustomProperties(prop, val) {
@@ -24,19 +34,6 @@ function setCustomProperties(prop, val) {
 function delCustomProperties() {
   document.documentElement.style = "";
 }
-
-//Listeners
-burgerBtn.addEventListener("click", () => {
-  if (burgerBtn.classList.contains("burger__triple-lines")) {
-    burgerBtn.classList.remove("burger__triple-lines");
-    burgerBtn.classList.add("burger__close");
-    headerMenuContainer.classList.add("header__menu-container_active");
-  } else {
-    burgerBtn.classList.remove("burger__close");
-    burgerBtn.classList.add("burger__triple-lines");
-    headerMenuContainer.classList.remove("header__menu-container_active");
-  }
-});
 
 //change theme
 switcherThems.addEventListener("click", () => {
@@ -114,6 +111,31 @@ function resetPositionImageContainer(ms) {
   }, ms);
 }
 
+function delClassContainerBikeCards() {
+  containerBikeCards.forEach((element) => {
+    element.classList.remove("bike-cards__image-container_active");
+  });
+}
+
+function delActiveBtnCarousel() {
+  buttonCarouselBikeCards.forEach((btn) => {
+    btn.classList.remove("bike-cards__button-link_active");
+  });
+}
+
+//Listeners
+burgerBtn.addEventListener("click", () => {
+  if (burgerBtn.classList.contains("burger__triple-lines")) {
+    burgerBtn.classList.remove("burger__triple-lines");
+    burgerBtn.classList.add("burger__close");
+    headerMenuContainer.classList.add("header__menu-container_active");
+  } else {
+    burgerBtn.classList.remove("burger__close");
+    burgerBtn.classList.add("burger__triple-lines");
+    headerMenuContainer.classList.remove("header__menu-container_active");
+  }
+});
+
 arrowLeftSlider.addEventListener("click", () => {
   changeTextSlider("minus");
   changeImageSlider("left");
@@ -132,4 +154,60 @@ window.addEventListener("resize", () => {
   imageContainerSlider.style.transition = "none";
   let numberPx = positionImagesSlider[positionVisibleSliderImage];
   imageContainerSlider.style.transform = `translate(${numberPx}px,0)`;
+  const imageContainerBikeCards = document.querySelector(".bike-cards__image-container_active");
+  imageContainerBikeCards.style = "";
+  delActiveBtnCarousel();
+  buttonCarouselBikeCards[0].classList.add("bike-cards__button-link_active");
+});
+
+menuBikeCards.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    menuBikeCards.forEach((btn) => {
+      if (event.target !== btn) {
+        btn.classList.remove("bike-cards__list-button_active");
+      } else {
+        btn.classList.add("bike-cards__list-button_active");
+        selectBikeCards.value = btn.value;
+        delClassContainerBikeCards();
+        bikeCardsObj[btn.value].classList.add("bike-cards__image-container_active");
+        buttonCarouselBikeCards[0].classList.add("bike-cards__button-link_active");
+      }
+    });
+  });
+});
+
+selectBikeCards.addEventListener("change", () => {
+  delClassContainerBikeCards();
+  bikeCardsObj[selectBikeCards.value].classList.add("bike-cards__image-container_active");
+  menuBikeCards.forEach((btn) => {
+    if (btn.value === selectBikeCards.value) {
+      btn.classList.add("bike-cards__list-button_active");
+      delActiveBtnCarousel();
+      buttonCarouselBikeCards[0].classList.add("bike-cards__button-link_active");
+    } else {
+      btn.classList.remove("bike-cards__list-button_active");
+    }
+  });
+});
+
+buttonCarouselBikeCards.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    const imageContainerBikeCards = document.querySelector(".bike-cards__image-container_active");
+    const imageBikeCards = imageContainerBikeCards.querySelectorAll(".bike-cards__link");
+    const imageWidth = getComputedStyle(imageBikeCards[0]).width;
+    delActiveBtnCarousel();
+    switch (btn.value) {
+      case "highway":
+        btn.classList.add("bike-cards__button-link_active");
+        imageContainerBikeCards.style = "";
+        break;
+      case "gravel":
+        btn.classList.add("bike-cards__button-link_active");
+        imageContainerBikeCards.style.transform = `translate(-${imageWidth},0)`;
+        break;
+      case "tt":
+        btn.classList.add("bike-cards__button-link_active");
+        imageContainerBikeCards.style.transform = `translate(-${parseFloat(imageWidth) * 2}px,0)`;
+    }
+  });
 });

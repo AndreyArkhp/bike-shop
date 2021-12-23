@@ -1,6 +1,8 @@
 .select-road {
+  padding-block-end: 65px;
   @include media("md") {
     padding-block-start: 40px;
+    padding-block-end: 0;
     position: relative;
     &::after {
       content: "";
