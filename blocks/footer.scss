@@ -1,0 +1,119 @@
+.footer {
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--color-footer-bg);
+  padding-block-end: 60px;
+  padding-block-start: 80px;
+  @include media("xl") {
+    padding-inline-end: 18px;
+  }
+  @include media("md") {
+    display: grid;
+    grid-column-gap: 20px;
+    padding-block-start: 60px;
+  }
+  &__switcher-thems {
+    display: flex;
+  }
+  &__title {
+    @extend %reset-margin-padding;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    @include font-set(24px, 32px, 600, #{var(--color-black)}, 0);
+    margin-block-end: 50px;
+    max-width: 250px;
+    @include media("md") {
+      grid-column: 1/3;
+      margin-block-end: 40px;
+    }
+  }
+  &__form {
+    @extend %reset-margin-padding;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    margin-block-end: 75px;
+    @include media("md") {
+      grid-column: 1/3;
+      margin-block-end: 90px;
+    }
+  }
+  &__copyright {
+    @extend %reset-margin-padding;
+    grid-row: 3/4;
+    grid-column: 1/2;
+    align-self: end;
+    @include font-set(14px, 20px, 600, #{var(--color-footer-copyright)}, 0);
+    @include media("md") {
+      align-self: center;
+    }
+  }
+  &__switcher-thems {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    justify-self: end;
+    @include media("md") {
+      display: none;
+    }
+  }
+  &__form-input {
+    @include font-set(13px, 28px, 500, #{var(--color-black)}, 0);
+    padding: 11px 270px 11px 20px;
+    background: var(--color-footer-bg);
+    border: 1px solid rgba(199, 199, 199, 0.5);
+    @include media("xl") {
+      padding-inline-end: 200px;
+    }
+    @include media("md") {
+      padding-inline-end: 95px;
+    }
+    @include media("xs") {
+      padding-inline-end: 80px;
+    }
+    &:hover::placeholder {
+      color: var(--color-black);
+    }
+    &:focus {
+      outline: var(--color-focus);
+    }
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+  &__form-label {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  &__form-button {
+    @extend %reset-button;
+    position: absolute;
+    top: 25%;
+    right: 11px;
+    @include font-set(13px, 28px, 500, #{var(--color-black)}, 0);
+    cursor: pointer;
+  }
+
+  &__switcher-mini-label {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background: no-repeat url(../images/them-logo-mini.svg);
+    display: none;
+    grid-row: 3/4;
+    grid-column: 2/3;
+    margin-inline-start: auto;
+    @include media("md") {
+      display: block;
+      &:checked {
+        outline: white;
+      }
+    }
+  }
+  &__switcher-thems-checkbox {
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+  }
+}

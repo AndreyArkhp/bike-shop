@@ -19,13 +19,13 @@
           <div class="header__menu-container page__centering">
             <ul class="header__menu">
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Покрытия и градиенты</a>
+                <a href="#select-road" class="header__menu-link">Покрытия и градиенты</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Велосипеды</a>
+                <a href="#bike-cards" class="header__menu-link">Велосипеды</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Тренировки</a>
+                <a href="#training" class="header__menu-link">Тренировки</a>
               </li>
             </ul>
             <div class="switcher-thems page__centering">
@@ -98,7 +98,7 @@
             </div>
           </figure>
         </section>
-        <section class="select-road page__content-right">
+        <section class="select-road page__content-right" id="select-road">
           <div class="slider">
             <h2 class="slider__title slider__title_visible">Шоссе</h2>
             <p class="slider__text slider__text_visible">
@@ -150,7 +150,7 @@
             </div>
           </div>
         </section>
-        <section class="bike-cards">
+        <section class="bike-cards" id="bike-cards">
           <div class="bike-cards__header">
             <h2 class="bike-cards__title">Велосипеды</h2>
             <div class="bike-cards__navigation">
@@ -334,7 +334,7 @@
             </div>
           </div>
         </section>
-        <section class="training page__content-center page__section-grid">
+        <section class="training page__content-center page__section-grid" id="training">
           <h2 class="training__title">Тренировки</h2>
 
           <img src="./images/photo/road-forest.jpg" alt="Шоссе в лесу" class="training__image" />
@@ -353,6 +353,45 @@
           </div>
         </section>
       </main>
+      <footer class="footer page__content-center page__section-grid">
+        <h2 class="footer__title">Подпишитесь на рассылку —</h2>
+        <form name="email" class="form footer__form">
+          <label class="form__label footer__form-label">
+            <input
+              type="email"
+              class="form__input footer__form-input"
+              placeholder="Ваш e-mail"
+              value=""
+            />
+            <button class="form__button footer__form-button" type="submit" disabled>ok</button>
+          </label>
+        </form>
+        <p class="footer__copyright">© Road Club 2021</p>
+        <div class="switcher-thems footer__switcher-thems">
+          <img
+            class="switcher-thems__image switcher-thems__image_type_sun"
+            src="./images/sun.svg"
+            alt="День"
+          />
+          <input
+            id="switch-input"
+            class="switcher-thems__checkbox"
+            type="checkbox"
+            aria-label="Включить или выключить темную тему"
+          />
+          <label for="switch-input" class="switcher-thems__switcher"></label>
+          <img
+            class="switcher-thems__image switcher-thems__image_type_month"
+            src="./images/month.svg"
+            alt="Ночь"
+          />
+        </div>
+        <div class="footer__switcher-thems-mini">
+          <label class="footer__switcher-mini-label"
+            ><input type="checkbox" class="footer__switcher-thems-checkbox" />
+          </label>
+        </div>
+      </footer>
       <script src="./scripts/index.js"></script>
     </div>
   </body>

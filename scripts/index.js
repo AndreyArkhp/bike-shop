@@ -2,7 +2,8 @@
 
 const burgerBtn = document.querySelector(".burger");
 const headerMenuContainer = document.querySelector(".header__menu-container");
-const switcherThems = document.querySelector(".switcher-thems__switcher");
+const switcherThems = document.querySelectorAll(".switcher-thems__switcher");
+const switcherThemsMini = document.querySelector(".footer__switcher-mini-label");
 const arrowLeftSlider = document.querySelector(".slider__button-left");
 const arrowRightSlider = document.querySelector(".slider__button-right");
 const titleSlider = document.querySelectorAll(".slider__title");
@@ -26,7 +27,7 @@ const bikeCardsObj = {
   gravel: containerBikeCards[1],
   tt: containerBikeCards[2],
 };
-
+let themWhite = true;
 //function
 function setCustomProperties(prop, val) {
   document.documentElement.style.setProperty(prop, val);
@@ -35,12 +36,11 @@ function delCustomProperties() {
   document.documentElement.style = "";
 }
 
-//change theme
-switcherThems.addEventListener("click", () => {
+function changeTheme() {
   const sunImage = document.querySelector(".switcher-thems__image_type_sun");
   const monthImage = document.querySelector(".switcher-thems__image_type_month");
   const switchCheckbox = document.querySelector(".switcher-thems__checkbox");
-  if (!switchCheckbox.checked) {
+  if (themWhite && !switchCheckbox.checked) {
     setCustomProperties("--left", "24px");
     setCustomProperties("--color-page", "#333");
     setCustomProperties("--close-icon", "url(../images/close-white.svg)");
@@ -48,16 +48,56 @@ switcherThems.addEventListener("click", () => {
     setCustomProperties("--color-black", "#fff");
     setCustomProperties("--color-grey", "#E6E6E6");
     setCustomProperties("--color-bike-name-line", "#707070");
+    setCustomProperties("--color-footer-bg", "#2f2f2f");
+    setCustomProperties("--color-footer-copyright", "#565656");
     sunImage.setAttribute("src", "./images/sun-dark.svg");
     monthImage.setAttribute("src", "./images/month-dark.svg");
+    themWhite = false;
   } else {
     delCustomProperties();
     setCustomProperties("--close-icon", "url(../images/close.svg)");
     sunImage.setAttribute("src", "./images/sun.svg");
     monthImage.setAttribute("src", "./images/month.svg");
+    themWhite = true;
   }
+}
+
+function changeThemeMini() {
+  const sunImage = document.querySelector(".switcher-thems__image_type_sun");
+  const monthImage = document.querySelector(".switcher-thems__image_type_month");
+  const switchCheckboxMini = document.querySelector(".footer__switcher-thems-checkbox");
+  if (themWhite && switchCheckboxMini.checked) {
+    setCustomProperties("--left", "24px");
+    setCustomProperties("--color-page", "#333");
+    setCustomProperties("--close-icon", "url(../images/close-white.svg)");
+    setCustomProperties("--color-switcher-bg", "#545454");
+    setCustomProperties("--color-black", "#fff");
+    setCustomProperties("--color-grey", "#E6E6E6");
+    setCustomProperties("--color-bike-name-line", "#707070");
+    setCustomProperties("--color-footer-bg", "#2f2f2f");
+    setCustomProperties("--color-footer-copyright", "#565656");
+    sunImage.setAttribute("src", "./images/sun-dark.svg");
+    monthImage.setAttribute("src", "./images/month-dark.svg");
+    themWhite = false;
+  } else {
+    delCustomProperties();
+    setCustomProperties("--close-icon", "url(../images/close.svg)");
+    sunImage.setAttribute("src", "./images/sun.svg");
+    monthImage.setAttribute("src", "./images/month.svg");
+    themWhite = true;
+  }
+}
+
+//change theme
+switcherThems.forEach((switcher) => {
+  switcher.addEventListener("click", () => {
+    changeTheme();
+  });
 });
 
+switcherThemsMini.addEventListener("click", () => {
+  changeThemeMini();
+});
 //slider
 
 let positionVisibleSliderText = 0;

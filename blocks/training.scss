@@ -22,6 +22,7 @@
   }
   @include media("md") {
     padding-block-start: 75px;
+    padding-block-end: 60px;
   }
   &__title {
     @extend %reset-margin-padding;
