@@ -1,6 +1,5 @@
 .bike-cards {
   padding-block-start: 60px;
-  padding-block-end: 60px;
   position: relative;
   @include media("md") {
     padding-inline-start: 18px;
@@ -18,6 +17,11 @@
   &__slider {
     @include media("md") {
       display: block;
+    }
+  }
+  &__slider-visible {
+    @include media("md") {
+      margin-block-end: 0;
     }
   }
   &__slider-visible::before {
