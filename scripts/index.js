@@ -50,8 +50,13 @@ function changeTheme() {
     setCustomProperties("--color-bike-name-line", "#707070");
     setCustomProperties("--color-footer-bg", "#2f2f2f");
     setCustomProperties("--color-footer-copyright", "#565656");
+    setCustomProperties("--color-arrow-bg", "#434343");
+    setCustomProperties("--color-select-bg", "#434343");
+    setCustomProperties("--arrow-previous", "url(../images/arrow-previous-white.svg)");
+    setCustomProperties("--arrow-next", "url(../images/arrow-next-white.svg)");
     sunImage.setAttribute("src", "./images/sun-dark.svg");
     monthImage.setAttribute("src", "./images/month-dark.svg");
+
     themWhite = false;
   } else {
     delCustomProperties();
@@ -76,6 +81,10 @@ function changeThemeMini() {
     setCustomProperties("--color-bike-name-line", "#707070");
     setCustomProperties("--color-footer-bg", "#2f2f2f");
     setCustomProperties("--color-footer-copyright", "#565656");
+    setCustomProperties("--color-arrow-bg", "#434343");
+    setCustomProperties("--color-select-bg", "#434343");
+    setCustomProperties("--arrow-previous", "url(../images/arrow-previous-white.svg)");
+    setCustomProperties("--arrow-next", "url(../images/arrow-next-white.svg)");
     sunImage.setAttribute("src", "./images/sun-dark.svg");
     monthImage.setAttribute("src", "./images/month-dark.svg");
     themWhite = false;

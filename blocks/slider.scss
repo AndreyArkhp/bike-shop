@@ -160,7 +160,7 @@
       left: 18px;
       width: 16px;
       height: 16px;
-      background: no-repeat url(../images/arrow-left.svg);
+      background: no-repeat var(--arrow-previous);
       @include media("md") {
         top: 10px;
         left: 12px;
@@ -181,7 +181,7 @@
       left: 21px;
       width: 16px;
       height: 16px;
-      background: no-repeat url(../images/arrow-right.svg);
+      background: no-repeat var(--arrow-next);
       @include media("md") {
         top: 10px;
         left: 15px;

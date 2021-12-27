@@ -64,6 +64,9 @@
       padding-inline-end: 200px;
     }
     @include media("md") {
+      padding-inline-end: 108px;
+    }
+    @include media("xs") {
       padding-inline-end: calc(100vw - 238px);
     }
 

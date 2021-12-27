@@ -34,6 +34,7 @@
   --color-focus: #c7c7c7;
   --color-footer-bg: #efefef;
   --color-footer-copyright: #cfcfcf;
+  --color-select-bg: #f4f4f4;
 }
 
 :root {
@@ -43,6 +44,8 @@
 :root {
   --close-icon: url("../images/close.svg");
   --road-icon: url("../images/highway-line.svg");
+  --arrow-previous: url("../images/arrow-left.svg");
+  --arrow-next: url("../images/arrow-right.svg");
 }
 
 :root {
@@ -874,7 +877,7 @@
   left: 18px;
   width: 16px;
   height: 16px;
-  background: no-repeat url(../images/arrow-left.svg);
+  background: no-repeat var(--arrow-previous);
 }
 @media screen and (max-width: 768px) {
   .slider__button-left::before {
@@ -897,7 +900,7 @@
   left: 21px;
   width: 16px;
   height: 16px;
-  background: no-repeat url(../images/arrow-right.svg);
+  background: no-repeat var(--arrow-next);
 }
 @media screen and (max-width: 768px) {
   .slider__button-right::before {
@@ -1137,11 +1140,11 @@
   color: var(--color-black);
   letter-spacing: 0;
   padding: 8px 62px 8px 12px;
-  background: var(--color-page);
   outline: none;
   display: none;
   appearance: none;
   background: no-repeat 90% 55%/14% url(../images/select-arrow.svg);
+  background-color: var(--color-select-bg);
 }
 .bike-cards__navigation-select:focus {
   border: 1px solid var(--color-focus);
@@ -1442,6 +1445,11 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .footer__form-input {
+    padding-inline-end: 108px;
+  }
+}
+@media screen and (max-width: 360px) {
   .footer__form-input {
     padding-inline-end: calc(100vw - 238px);
   }

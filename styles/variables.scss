@@ -10,6 +10,7 @@
   --color-focus: #c7c7c7;
   --color-footer-bg: #efefef;
   --color-footer-copyright: #cfcfcf;
+  --color-select-bg: #f4f4f4;
 }
 $color-shadow: rgba(0, 0, 0, 0.44);
 $color-drop-shadow: rgba(0, 0, 0, 0.06);
@@ -38,6 +39,8 @@ $sizes: (
 :root {
   --close-icon: url("../images/close.svg");
   --road-icon: url("../images/highway-line.svg");
+  --arrow-previous: url("../images/arrow-left.svg");
+  --arrow-next: url("../images/arrow-right.svg");
 }
 
 //size button
