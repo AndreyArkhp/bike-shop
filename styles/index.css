@@ -1364,6 +1364,7 @@
     display: grid;
     grid-column-gap: 20px;
     padding-block-start: 60px;
+    padding-block-end: 20px;
   }
 }
 .footer__switcher-thems {
@@ -1442,12 +1443,7 @@
 }
 @media screen and (max-width: 768px) {
   .footer__form-input {
-    padding-inline-end: 95px;
-  }
-}
-@media screen and (max-width: 360px) {
-  .footer__form-input {
-    padding-inline-end: 80px;
+    padding-inline-end: calc(100vw - 238px);
   }
 }
 .footer__form-input:hover::placeholder {

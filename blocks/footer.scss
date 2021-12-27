@@ -10,6 +10,7 @@
     display: grid;
     grid-column-gap: 20px;
     padding-block-start: 60px;
+    padding-block-end: 20px;
   }
   &__switcher-thems {
     display: flex;
@@ -63,11 +64,9 @@
       padding-inline-end: 200px;
     }
     @include media("md") {
-      padding-inline-end: 95px;
+      padding-inline-end: calc(100vw - 238px);
     }
-    @include media("xs") {
-      padding-inline-end: 80px;
-    }
+
     &:hover::placeholder {
       color: var(--color-black);
     }
