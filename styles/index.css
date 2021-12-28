@@ -52,7 +52,7 @@
   --time-change-image: 0.4s;
 }
 
-.footer__copyright, .footer__form, .footer__title, .training__text, .training__title, .bike-cards__signature, .bike-cards__list-paving, .bike-cards__title, .slider__button, .select-road__text, .select-road__title, .quote__author-profession, .quote__quote-text, .quote__quote-container, .button-gradient, .bike-selection__text, .bike-selection__bike-name, .bike-selection__title, .burger, .header__menu, .footer__form-button, .bike-cards__button-link, .bike-cards__list-button {
+.footer__copyright, .footer__form, .footer__title, .training__text, .training__title, .bike-cards__signature, .bike-cards__list-paving, .bike-cards__title, .slider__button, .select-road__text, .select-road__title, .quote__author-profession, .quote__quote-text, .quote__quote-container, .bike-selection__text, .bike-selection__bike-name, .bike-selection__title, .button-gradient, .burger, .header__menu, .footer__form-button, .bike-cards__button-link, .bike-cards__list-button {
   margin: 0;
   padding: 0;
 }
@@ -183,7 +183,7 @@
   background: var(--color-page);
   cursor: pointer;
 }
-.burger__triple-lines::before {
+.burger::before {
   content: "";
   position: absolute;
   top: 0;
@@ -260,6 +260,58 @@
   }
 }
 
+.button-gradient {
+  margin-block-end: 170px;
+  width: 180px;
+  height: fit-content;
+  border: none;
+  width: 180px;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  min-height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 1280px) {
+  .button-gradient {
+    margin-block-end: 6vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .button-gradient {
+    margin-block-end: 40px;
+    width: 100%;
+  }
+}
+.button-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  transition: left 0.3s linear;
+  z-index: -1;
+}
+.button-gradient:hover::before {
+  left: 0;
+}
+@media screen and (max-width: 768px) {
+  .button-gradient {
+    min-height: 46px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 19px;
+  }
+}
+
 .bike-selection {
   padding-block-start: 20px;
 }
@@ -318,9 +370,15 @@
   width: 100%;
   object-fit: cover;
 }
+@media screen and (max-width: 1024px) {
+  .bike-selection__image {
+    min-width: 310px;
+  }
+}
 @media screen and (max-width: 768px) {
   .bike-selection__image {
     margin: 0;
+    min-width: 254px;
   }
 }
 .bike-selection__image-container {
@@ -338,7 +396,7 @@
 .bike-selection__card-stiky {
   position: absolute;
   bottom: 7%;
-  left: -32.5%;
+  left: -61.5%;
   height: 51.5%;
   width: 130%;
 }
@@ -358,6 +416,11 @@
     left: -11.5%;
     bottom: 5%;
     width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .bike-selection__card-stiky {
+    left: -15.5%;
   }
 }
 .bike-selection__bike-name {
@@ -381,8 +444,20 @@
   background: var(--color-bike-name-line);
 }
 @media screen and (max-width: 1024px) {
+  .bike-selection__bike-name::after {
+    width: calc(55vw - 400px);
+  }
+}
+@media screen and (max-width: 768px) {
   .bike-selection__bike-name {
     display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection__bike-name {
+    margin-block-end: 20px;
+    grid-row: 3;
+    grid-column: 1;
   }
 }
 .bike-selection__text {
@@ -409,7 +484,7 @@
     font-size: 17px;
     line-height: 25px;
     max-width: 250px;
-    margin-block-end: calc(50vw - 340px);
+    margin-block-end: 40px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -420,57 +495,54 @@
     margin-block-end: 40px;
   }
 }
-
-.button-gradient {
-  margin-block-end: 170px;
+.bike-selection__button {
   grid-row: 3;
-  width: 180px;
-  height: fit-content;
-  border: none;
-  width: 180px;
-  overflow: hidden;
-  position: relative;
-  background: transparent;
-  min-height: 50px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: "Inter", Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 1px;
+  grid-column: 1;
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection__button {
+    grid-row: 5;
+    grid-column: 1;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 360px) {
+  .bike-selection__button {
+    margin-block-end: 40px;
+  }
+}
+.bike-selection__bike-fix {
+  margin: 0 auto;
+  background: #f4f4f4;
+  box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  border-radius: 20px;
+  padding: 20px 50px;
+  display: block;
+  object-fit: cover;
+  position: sticky;
+  top: 0;
 }
 @media screen and (max-width: 1280px) {
-  .button-gradient {
-    margin-block-end: 6vw;
+  .bike-selection__bike-fix {
+    max-width: 365px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection__bike-fix {
+    max-width: 225px;
+    padding: 20px 40px;
   }
 }
 @media screen and (max-width: 768px) {
-  .button-gradient {
-    margin-block-end: 40px;
-    width: 100%;
+  .bike-selection__bike-fix {
+    max-width: 60vw;
+    padding: 14px 35px;
   }
 }
-.button-gradient::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  transition: left 0.3s linear;
-  z-index: -1;
-}
-.button-gradient:hover::before {
-  left: 0;
-}
-@media screen and (max-width: 768px) {
-  .button-gradient {
-    min-height: 46px;
-    width: 100%;
-    font-size: 13px;
-    line-height: 19px;
+@media screen and (max-width: 360px) {
+  .bike-selection__bike-fix {
+    max-width: 180px;
+    padding: 10.67px 26.59px;
   }
 }
 
@@ -478,66 +550,11 @@
   max-width: 440px;
   box-sizing: border-box;
   background: #f4f4f4;
-  border-radius: 20px;
-  overflow: hidden;
   box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  border-radius: 20px;
   padding: 20px 50px;
-}
-.card__bike-fix {
   display: block;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 30px;
   object-fit: cover;
-}
-.card__stiky {
-  position: sticky;
-  top: 0;
-}
-@media screen and (max-width: 1280px) {
-  .card__stiky {
-    max-width: 365px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .card__stiky {
-    max-width: 290px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .card__stiky {
-    max-width: 60vw;
-    padding: 14px 35px;
-  }
-}
-@media screen and (max-width: 360px) {
-  .card__stiky {
-    max-width: 234px;
-    padding: 10.67px 26.59px;
-  }
-}
-.card__signature::before {
-  content: "Cannondale Systemsix";
-  position: absolute;
-  bottom: 5px;
-  left: 45px;
-  display: none;
-  font-family: "Inter", Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 18px;
-  font-weight: 400;
-  color: var(--color-black);
-  letter-spacing: 0;
-}
-@media screen and (max-width: 1024px) {
-  .card__signature::before {
-    display: block;
-  }
-}
-@media screen and (max-width: 768px) {
-  .card__signature::before {
-    display: none;
-  }
 }
 
 .quote {
@@ -644,6 +661,11 @@
   .quote__author-profession {
     font-size: 10px;
     line-height: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .quote__author-profession {
+    margin-block-end: 10px;
   }
 }
 @media screen and (max-width: 1280px) {
@@ -754,6 +776,9 @@
     line-height: 18px;
   }
 }
+.select-road__text_visible {
+  display: block;
+}
 @media screen and (max-width: 768px) {
   .select-road {
     display: grid;
@@ -771,7 +796,7 @@
 }
 @media screen and (max-width: 768px) {
   .slider {
-    margin-block-end: 40px;
+    margin-block-end: 38px;
   }
 }
 .slider__image {
@@ -787,7 +812,7 @@
 .slider::before {
   content: "";
   position: absolute;
-  bottom: 14px;
+  bottom: 115px;
   left: 0;
   width: 100px;
   height: 40px;
@@ -809,7 +834,7 @@
 .slider::after {
   content: "";
   position: absolute;
-  bottom: 24px;
+  bottom: 125px;
   left: 15px;
   width: 50px;
   height: 15px;
@@ -828,6 +853,7 @@
   width: 100%;
   transform: translate(0, 0);
   transition: transform var(--time-change-image) ease-in-out;
+  margin-block-end: 50px;
 }
 .slider__arrows-container {
   grid-row: 1/2;
@@ -1196,6 +1222,11 @@
     display: block;
   }
 }
+@media screen and (max-width: 360px) {
+  .bike-cards__button-links-container {
+    margin-block-end: 0;
+  }
+}
 .bike-cards__button-link {
   cursor: pointer;
   width: 8px;
@@ -1232,9 +1263,15 @@
   position: absolute;
   top: 33px;
   left: 18px;
+  display: none;
   width: calc(100% - 36px);
   height: 1px;
   background: #e3e3e3;
+}
+@media screen and (max-width: 768px) {
+  .training::after {
+    display: block;
+  }
 }
 @media screen and (max-width: 1280px) {
   .training {

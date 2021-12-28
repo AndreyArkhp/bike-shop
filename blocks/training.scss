@@ -8,9 +8,13 @@
     position: absolute;
     top: 33px;
     left: 18px;
+    display: none;
     width: calc(100% - 36px);
     height: 1px;
     background: $color-line;
+    @include media("md") {
+      display: block;
+    }
   }
   @include media("xxl") {
     padding-block-start: 120px;

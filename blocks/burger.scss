@@ -8,7 +8,7 @@
   border: none;
   background: var(--color-page);
   cursor: pointer;
-  &__triple-lines::before {
+  &::before {
     content: "";
     position: absolute;
     top: 0;

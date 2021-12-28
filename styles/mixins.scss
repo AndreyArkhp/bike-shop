@@ -18,3 +18,13 @@
     }
   }
 }
+
+//Image card
+@mixin card {
+  background: $color-card-bg;
+  box-shadow: -20px 60px 220px $color-shadow;
+  border-radius: 20px;
+  padding: 20px 50px;
+  display: block;
+  object-fit: cover;
+}

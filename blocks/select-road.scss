@@ -62,6 +62,9 @@
       font-size: 12px;
       line-height: 18px;
     }
+    &_visible {
+      display: block;
+    }
   }
   @include media("md") {
     display: grid;

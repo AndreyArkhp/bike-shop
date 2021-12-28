@@ -214,6 +214,9 @@
     @include media("md") {
       display: block;
     }
+    @include media("xs") {
+      margin-block-end: 0;
+    }
   }
   &__button-link {
     @extend %reset-button;
