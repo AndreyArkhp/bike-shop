@@ -4,10 +4,10 @@ const burgerBtn = document.querySelector(".burger");
 const headerMenuContainer = document.querySelector(".header__menu-container");
 const switcherThems = document.querySelectorAll(".switcher-thems__switcher");
 const switcherThemsMini = document.querySelector(".footer__switcher-mini-label");
-const arrowLeftSlider = document.querySelector(".slider__button-left");
-const arrowRightSlider = document.querySelector(".slider__button-right");
-const titleSlider = document.querySelectorAll(".slider__title");
-const textSlider = document.querySelectorAll(".slider__text");
+const arrowLeftSlider = document.querySelector(".slider__button-previous");
+const arrowRightSlider = document.querySelector(".slider__button-next");
+const titleSlider = document.querySelectorAll(".select-road__title");
+const textSlider = document.querySelectorAll(".select-road__text");
 const imagesSlider = Array.from(document.querySelectorAll(".slider__image"));
 const imageContainerSlider = document.querySelector(".slider__image-container");
 const menuBikeCards = document.querySelectorAll(".bike-cards__list-button");
@@ -117,8 +117,8 @@ switcherThems.forEach((switcher) => {
 switcherThemsMini.addEventListener("click", () => {
   changeThemeMini();
 });
-//slider
 
+//slider
 let positionVisibleSliderText = 0;
 let positionVisibleSliderImage = 3;
 let imageWidth = parseFloat(getComputedStyle(imagesSlider[0]).width);
@@ -129,8 +129,8 @@ for (let i = -6; i <= 6; i++) {
 resetPositionImageContainer(timeChangeImage);
 
 function changeTextSlider(mathStr) {
-  titleSlider[positionVisibleSliderText].classList.remove("slider__title_visible");
-  textSlider[positionVisibleSliderText].classList.remove("slider__text_visible");
+  titleSlider[positionVisibleSliderText].classList.remove("select-road__title_visible");
+  textSlider[positionVisibleSliderText].classList.remove("select-road__text_visible");
 
   if (mathStr === "plus") {
     positionVisibleSliderText < 2 ? positionVisibleSliderText++ : (positionVisibleSliderText = 0);
@@ -138,8 +138,8 @@ function changeTextSlider(mathStr) {
     positionVisibleSliderText === 0 ? (positionVisibleSliderText = 2) : positionVisibleSliderText--;
   }
 
-  titleSlider[positionVisibleSliderText].classList.add("slider__title_visible");
-  textSlider[positionVisibleSliderText].classList.add("slider__text_visible");
+  titleSlider[positionVisibleSliderText].classList.add("select-road__title_visible");
+  textSlider[positionVisibleSliderText].classList.add("select-road__text_visible");
   changeIconRoadSlider(positionVisibleSliderText);
 }
 
