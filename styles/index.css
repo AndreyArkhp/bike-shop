@@ -616,11 +616,10 @@
 .quote__quote-author {
   font-family: "Inter", Helvetica, sans-serif;
   font-size: 20px;
-  line-height: 32px;
+  line-height: 40px;
   font-weight: 500;
   color: var(--color-black);
   letter-spacing: 0;
-  margin-block-end: 1%;
 }
 @media screen and (max-width: 768px) {
   .quote__quote-author {
@@ -1392,6 +1391,7 @@
   }
 }
 .footer__form {
+  width: 362px;
   grid-row: 2/3;
   grid-column: 1/2;
   margin-block-end: 75px;
@@ -1435,9 +1435,11 @@
   font-weight: 500;
   color: var(--color-black);
   letter-spacing: 0;
-  padding: 11px 270px 11px 20px;
+  width: 310px;
+  padding: 11px 0 11px 20px;
   background: var(--color-footer-bg);
-  border: 1px solid rgba(199, 199, 199, 0.5);
+  outline: none;
+  border: none;
 }
 @media screen and (max-width: 1024px) {
   .footer__form-input {
@@ -1457,26 +1459,24 @@
 .footer__form-input:hover::placeholder {
   color: var(--color-black);
 }
-.footer__form-input:focus {
-  outline: var(--color-focus);
-}
 .footer__form-input:focus::placeholder {
   color: transparent;
 }
 .footer__form-label {
   display: inline-block;
-  position: relative;
   overflow: hidden;
+  border: 1px solid rgba(199, 199, 199, 0.5);
+}
+.footer__form-label:focus {
+  outline: var(--color-focus);
 }
 .footer__form-button {
-  position: absolute;
-  top: 25%;
-  right: 11px;
+  margin-inline-end: 10px;
   font-family: "Inter", Helvetica, sans-serif;
   font-size: 13px;
   line-height: 28px;
   font-weight: 500;
-  color: var(--color-black);
+  color: transparent;
   letter-spacing: 0;
   cursor: pointer;
 }

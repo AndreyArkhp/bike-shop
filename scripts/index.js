@@ -14,6 +14,8 @@ const menuBikeCards = document.querySelectorAll(".bike-cards__list-button");
 const containerBikeCards = document.querySelectorAll(".bike-cards__image-container");
 const selectBikeCards = document.querySelector(".bike-cards__navigation-select");
 const buttonCarouselBikeCards = document.querySelectorAll(".bike-cards__button-link");
+const footerEmailInput = document.querySelector(".footer__form-input");
+const footerButtonInput = document.querySelector(".footer__form-button");
 
 const timeChangeImage =
   parseFloat(getComputedStyle(imageContainerSlider).getPropertyValue("--time-change-image")) * 1000;
@@ -29,6 +31,14 @@ const bikeCardsObj = {
 };
 let themWhite = true;
 //function
+function showInputButton() {
+  footerButtonInput.style.color = " #151515";
+}
+
+function dontShowInputButton() {
+  footerButtonInput.style.color = "transparent";
+}
+
 function setCustomProperties(prop, val) {
   document.documentElement.style.setProperty(prop, val);
 }
@@ -259,4 +269,12 @@ buttonCarouselBikeCards.forEach((btn) => {
         imageContainerBikeCards.style.transform = `translate(-${parseFloat(imageWidth) * 2}px,0)`;
     }
   });
+});
+
+footerEmailInput.addEventListener("focus", () => {
+  showInputButton();
+});
+
+footerEmailInput.addEventListener("blur", () => {
+  dontShowInputButton();
 });

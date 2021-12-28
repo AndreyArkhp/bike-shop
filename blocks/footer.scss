@@ -29,6 +29,7 @@
   }
   &__form {
     @extend %reset-margin-padding;
+    width: 362px;
     grid-row: 2/3;
     grid-column: 1/2;
     margin-block-end: 75px;
@@ -57,9 +58,11 @@
   }
   &__form-input {
     @include font-set(13px, 28px, 500, #{var(--color-black)}, 0);
-    padding: 11px 270px 11px 20px;
+    width: 310px;
+    padding: 11px 0 11px 20px;
     background: var(--color-footer-bg);
-    border: 1px solid rgba(199, 199, 199, 0.5);
+    outline: none;
+    border: none;
     @include media("xl") {
       padding-inline-end: 200px;
     }
@@ -69,12 +72,8 @@
     @include media("xs") {
       padding-inline-end: calc(100vw - 238px);
     }
-
     &:hover::placeholder {
       color: var(--color-black);
-    }
-    &:focus {
-      outline: var(--color-focus);
     }
     &:focus::placeholder {
       color: transparent;
@@ -82,15 +81,16 @@
   }
   &__form-label {
     display: inline-block;
-    position: relative;
     overflow: hidden;
+    border: 1px solid rgba(199, 199, 199, 0.5);
+    &:focus {
+      outline: var(--color-focus);
+    }
   }
   &__form-button {
     @extend %reset-button;
-    position: absolute;
-    top: 25%;
-    right: 11px;
-    @include font-set(13px, 28px, 500, #{var(--color-black)}, 0);
+    margin-inline-end: 10px;
+    @include font-set(13px, 28px, 500, transparent, 0);
     cursor: pointer;
   }
 
