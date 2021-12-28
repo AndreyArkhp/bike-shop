@@ -15,6 +15,12 @@
     }
   }
   &__slider {
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
     @include media("md") {
       display: block;
     }
