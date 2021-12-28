@@ -120,6 +120,7 @@
     display: block;
     cursor: pointer;
     text-decoration: none;
+
     @include media("md") {
       margin-inline-start: 0;
       margin-inline-end: 0;
@@ -144,10 +145,18 @@
     width: 100%;
     border-radius: 40px;
     object-fit: cover;
+    transition: opacity 0.2s linear;
+    &:hover {
+      opacity: 0.75;
+    }
   }
   &__signature {
     @extend %reset-margin-padding;
     @include font-set(18px, 22px, 600, #{var(--color-black)}, 0);
+    transition: opacity 0.2s linear;
+    &:hover {
+      opacity: 0.75;
+    }
     @include media("xxl") {
       font-size: 15px;
       line-height: 19px;

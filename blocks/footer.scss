@@ -92,7 +92,9 @@
     @extend %reset-button;
     margin-inline-end: 10px;
     @include font-set(13px, 28px, 500, transparent, 0);
-    cursor: pointer;
+    &:hover {
+      opacity: 0.75;
+    }
   }
 
   &__switcher-mini-label {

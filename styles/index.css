@@ -233,6 +233,7 @@
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  transition: opacity 0.2s linear;
 }
 .switcher-thems__switcher::before {
   content: "";
@@ -243,6 +244,9 @@
   background: #24b47e;
   width: 20px;
   height: 20px;
+}
+.switcher-thems__switcher:hover {
+  opacity: 0.75;
 }
 .switcher-thems__checkbox {
   appearance: none;
@@ -1099,6 +1103,10 @@
   width: 100%;
   border-radius: 40px;
   object-fit: cover;
+  transition: opacity 0.2s linear;
+}
+.bike-cards__image:hover {
+  opacity: 0.75;
 }
 .bike-cards__signature {
   font-family: "Inter", Helvetica, sans-serif;
@@ -1107,6 +1115,10 @@
   font-weight: 600;
   color: var(--color-black);
   letter-spacing: 0;
+  transition: opacity 0.2s linear;
+}
+.bike-cards__signature:hover {
+  opacity: 0.75;
 }
 @media screen and (max-width: 1280px) {
   .bike-cards__signature {
@@ -1480,7 +1492,9 @@
   font-weight: 500;
   color: transparent;
   letter-spacing: 0;
-  cursor: pointer;
+}
+.footer__form-button:hover {
+  opacity: 0.75;
 }
 .footer__switcher-mini-label {
   position: relative;

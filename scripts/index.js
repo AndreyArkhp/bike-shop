@@ -33,10 +33,12 @@ let themWhite = true;
 //function
 function showInputButton() {
   footerButtonInput.style.color = " #151515";
+  footerButtonInput.style.cursor = "pointer";
 }
 
 function dontShowInputButton() {
   footerButtonInput.style.color = "transparent";
+  footerButtonInput.style.cursor = "text";
 }
 
 function setCustomProperties(prop, val) {
