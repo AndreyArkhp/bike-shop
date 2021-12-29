@@ -277,17 +277,6 @@
   color: #fff;
   letter-spacing: 1px;
 }
-@media screen and (max-width: 1280px) {
-  .button-gradient {
-    margin-block-end: 6vw;
-  }
-}
-@media screen and (max-width: 768px) {
-  .button-gradient {
-    margin-block-end: 40px;
-    width: 100%;
-  }
-}
 .button-gradient::before {
   content: "";
   position: absolute;
@@ -301,18 +290,32 @@
 .button-gradient:hover::before {
   left: 0;
 }
+@media screen and (max-width: 1280px) {
+  .button-gradient {
+    margin-block-end: 6vw;
+  }
+}
 @media screen and (max-width: 768px) {
   .button-gradient {
-    min-height: 46px;
     width: 100%;
     font-size: 13px;
     line-height: 19px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .button-gradient {
+    padding: 14px 0;
   }
 }
 
 .bike-selection {
   padding-block-start: 20px;
   position: relative;
+}
+@media screen and (max-width: 1024px) {
+  .bike-selection {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 768px) {
   .bike-selection {
@@ -395,7 +398,7 @@
   bottom: 7%;
   left: 43.7%;
   height: 51.5%;
-  width: 50%;
+  width: 40%;
 }
 @media screen and (max-width: 1280px) {
   .bike-selection__card-stiky {
@@ -630,7 +633,7 @@
 }
 @media screen and (max-width: 768px) {
   .quote__quote-text {
-    margin-block-end: 40px;
+    margin-block-end: 38px;
   }
 }
 .quote__quote-author {
@@ -658,15 +661,16 @@
   opacity: 0.7;
   margin-block-end: 4px;
 }
+@media screen and (max-width: 1024px) {
+  .quote__author-profession {
+    margin-block-end: 10px;
+  }
+}
 @media screen and (max-width: 768px) {
   .quote__author-profession {
     font-size: 10px;
     line-height: 16px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .quote__author-profession {
-    margin-block-end: 10px;
+    margin-block-start: 4px;
   }
 }
 @media screen and (max-width: 1280px) {
@@ -694,14 +698,14 @@
 }
 @media screen and (max-width: 768px) {
   .select-road {
-    padding-block-start: 40px;
+    padding-block-start: 37px;
     padding-block-end: 0;
     position: relative;
   }
   .select-road::after {
     content: "";
     position: absolute;
-    top: 40px;
+    top: 35px;
     left: 18px;
     width: calc(100% - 36px);
     height: 1px;
@@ -775,6 +779,7 @@
   .select-road__text {
     font-size: 12px;
     line-height: 18px;
+    margin-block-end: 0;
   }
 }
 .select-road__text_visible {
@@ -792,7 +797,7 @@
   .slider {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-block-end: 38px;
+    margin-block-end: 60px;
   }
 }
 .slider__image {
@@ -804,7 +809,7 @@
 @media screen and (max-width: 768px) {
   .slider__image {
     max-width: 700px;
-    width: calc(100vw - 18px);
+    width: calc(100vw - 36px);
   }
 }
 .slider::before {
@@ -833,7 +838,7 @@
   .slider::before {
     width: 70px;
     height: 30px;
-    bottom: 60px;
+    bottom: 50px;
   }
 }
 .slider::after {
@@ -855,7 +860,7 @@
 }
 @media screen and (max-width: 360px) {
   .slider::after {
-    bottom: 70px;
+    bottom: 60px;
     left: 10px;
     width: 35px;
   }
@@ -867,6 +872,11 @@
   margin-block-end: 50px;
   grid-row: 2/3;
   grid-column: 1/3;
+}
+@media screen and (max-width: 768px) {
+  .slider__image-container {
+    margin-block-end: 38px;
+  }
 }
 .slider__arrows-container {
   grid-row: 1/2;
@@ -996,6 +1006,7 @@
 @media screen and (max-width: 768px) {
   .bike-cards__slider {
     display: block;
+    margin-block-end: 45px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1109,7 +1120,7 @@
 }
 @media screen and (max-width: 360px) {
   .bike-cards__card {
-    width: 92%;
+    width: 100%;
     padding-block-end: 36px;
     margin: 0;
   }
@@ -1182,9 +1193,10 @@
   .bike-cards__signature {
     position: relative;
     width: 90%;
-    bottom: 33px;
+    bottom: 28px;
     font-size: 14px;
     line-height: 18px;
+    margin: 0 auto;
   }
 }
 .bike-cards__navigation-select {
@@ -1269,7 +1281,7 @@
   .bike-cards__button-link {
     width: 4px;
     height: 4px;
-    margin-inline-end: 5px;
+    margin-inline-end: 1px;
   }
 }
 
@@ -1422,28 +1434,29 @@
 }
 
 .footer {
-  grid-template-columns: repeat(2, 1fr);
   background: var(--color-footer-bg);
+}
+.footer__content {
+  box-sizing: border-box;
+  max-width: 1440px;
+  min-width: 284px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
   padding-block-end: 60px;
-  padding-block-start: 80px;
+  padding-block-start: 85px;
 }
 @media screen and (max-width: 1024px) {
-  .footer {
+  .footer__content {
     padding-inline-end: 18px;
   }
 }
 @media screen and (max-width: 768px) {
-  .footer {
+  .footer__content {
     display: grid;
     grid-column-gap: 20px;
     padding-block-start: 60px;
     padding-block-end: 20px;
   }
-}
-.footer__content {
-  max-width: 1440px;
-  min-width: 320px;
-  margin: 0 auto;
 }
 .footer__switcher-thems {
   display: flex;

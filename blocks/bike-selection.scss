@@ -1,6 +1,9 @@
 .bike-selection {
   padding-block-start: 20px;
   position: relative;
+  @include media("xl") {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @include media("md") {
     padding-block-start: 0;
   }
@@ -59,7 +62,7 @@
     bottom: 7%;
     left: 43.7%;
     height: 51.5%;
-    width: 50%;
+    width: 40%;
     @include media("xxl") {
       left: 50%;
       min-height: 400px;

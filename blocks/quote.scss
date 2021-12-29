@@ -55,7 +55,7 @@
       letter-spacing: -0.5px;
     }
     @include media("md") {
-      margin-block-end: 40px;
+      margin-block-end: 38px;
     }
   }
   &__quote-author {
@@ -71,12 +71,14 @@
     @include font-set(16px, 28px, 400, var(--color-grey), 0);
     opacity: 0.7;
     margin-block-end: 4px;
+
+    @include media("xl") {
+      margin-block-end: 10px;
+    }
     @include media("md") {
       font-size: 10px;
       line-height: 16px;
-    }
-    @include media("xl") {
-      margin-block-end: 10px;
+      margin-block-start: 4px;
     }
   }
   @include media("xxl") {

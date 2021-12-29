@@ -1,21 +1,23 @@
 .footer {
-  grid-template-columns: repeat(2, 1fr);
   background: var(--color-footer-bg);
-  padding-block-end: 60px;
-  padding-block-start: 80px;
-  @include media("xl") {
-    padding-inline-end: 18px;
-  }
-  @include media("md") {
-    display: grid;
-    grid-column-gap: 20px;
-    padding-block-start: 60px;
-    padding-block-end: 20px;
-  }
+
   &__content {
+    box-sizing: border-box;
     max-width: 1440px;
-    min-width: 320px;
+    min-width: 284px;
     margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    padding-block-end: 60px;
+    padding-block-start: 85px;
+    @include media("xl") {
+      padding-inline-end: 18px;
+    }
+    @include media("md") {
+      display: grid;
+      grid-column-gap: 20px;
+      padding-block-start: 60px;
+      padding-block-end: 20px;
+    }
   }
   &__switcher-thems {
     display: flex;

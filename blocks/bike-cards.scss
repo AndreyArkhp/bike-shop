@@ -23,6 +23,7 @@
     }
     @include media("md") {
       display: block;
+      margin-block-end: 45px;
     }
   }
   &__slider-visible {
@@ -111,7 +112,7 @@
       margin: 0 auto;
     }
     @include media("xs") {
-      width: 92%;
+      width: 100%;
       padding-block-end: 36px;
       margin: 0;
     }
@@ -167,9 +168,10 @@
     @include media("xs") {
       position: relative;
       width: 90%;
-      bottom: 33px;
+      bottom: 28px;
       font-size: 14px;
       line-height: 18px;
+      margin: 0 auto;
     }
   }
   &__navigation-select {
@@ -238,7 +240,7 @@
     @include media("xs") {
       width: 4px;
       height: 4px;
-      margin-inline-end: 5px;
+      margin-inline-end: 1px;
     }
   }
 }

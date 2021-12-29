@@ -1,13 +1,6 @@
 .button-gradient {
   margin-block-end: 170px;
   width: $width-button;
-  @include media("xxl") {
-    margin-block-end: 6vw;
-  }
-  @include media("md") {
-    margin-block-end: 40px;
-    width: 100%;
-  }
   @extend %reset-margin-padding;
   width: $width-button;
   overflow: hidden;
@@ -31,10 +24,15 @@
   &:hover::before {
     left: 0;
   }
+  @include media("xxl") {
+    margin-block-end: 6vw;
+  }
   @include media("md") {
-    min-height: 46px;
     width: 100%;
     font-size: 13px;
     line-height: 19px;
+  }
+  @include media("xs") {
+    padding: 14px 0;
   }
 }
