@@ -248,6 +248,45 @@ buttonCarouselBikeCards.forEach((btn) => {
   });
 });
 
+//touch change image
+const bikeCardsLinks = document.querySelectorAll(".bike-cards__link");
+const imageContainerBikeCards = document.querySelector(".bike-cards__image-container_active");
+const imageBikeCards = imageContainerBikeCards.querySelectorAll(".bike-cards__link");
+let initialX;
+let ofsetX;
+
+bikeCardsLinks.forEach((link) => {
+  link.addEventListener("touchstart", (event) => {
+    initialX = event.touches[0].clientX;
+  });
+});
+
+bikeCardsLinks.forEach((link) => {
+  link.addEventListener("touchmove", (event) => {
+    ofsetX = initialX - event.touches[0].clientX;
+  });
+});
+let ofset = 0;
+bikeCardsLinks.forEach((link) => {
+  link.addEventListener("touchend", () => {
+    const imageWidth = getComputedStyle(imageBikeCards[0]).width;
+
+    if (ofsetX > 0) {
+      if (parseFloat(imageWidth) * 2 > -ofset) {
+        ofset -= parseFloat(imageWidth);
+        imageContainerBikeCards.style.transform = `translate(${ofset}px,0)`;
+        console.log(ofset);
+      }
+    } else {
+      if (ofset < 0) {
+        ofset += parseFloat(imageWidth);
+        imageContainerBikeCards.style.transform = `translate(${ofset}px,0)`;
+        console.log(ofset);
+      }
+    }
+  });
+});
+
 //footer email
 footerEmailInput.addEventListener("focus", () => {
   showInputButton();
