@@ -12,6 +12,11 @@
     padding-block-start: 60px;
     padding-block-end: 20px;
   }
+  &__content {
+    max-width: 1440px;
+    min-width: 320px;
+    margin: 0 auto;
+  }
   &__switcher-thems {
     display: flex;
   }

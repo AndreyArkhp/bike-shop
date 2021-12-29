@@ -1,7 +1,6 @@
 .button-gradient {
   margin-block-end: 170px;
   width: $width-button;
-  height: fit-content;
   @include media("xxl") {
     margin-block-end: 6vw;
   }
@@ -9,16 +8,14 @@
     margin-block-end: 40px;
     width: 100%;
   }
-
-  border: none;
   @extend %reset-margin-padding;
   width: $width-button;
   overflow: hidden;
   position: relative;
-  background: transparent;
-  min-height: 50px;
+  padding: 16px 0;
   border-radius: 4px;
-  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
   @include font-set(14px, 18px, 600, $color-white, 1px);
   &::before {
     content: "";
