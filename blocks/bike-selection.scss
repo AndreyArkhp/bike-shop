@@ -1,5 +1,6 @@
 .bike-selection {
   padding-block-start: 20px;
+  position: relative;
   @include media("md") {
     padding-block-start: 0;
   }
@@ -35,46 +36,49 @@
   }
   &__image {
     display: block;
+    grid-row: 1/6;
+    grid-column: 2;
+    max-height: 836px;
     width: 100%;
     object-fit: cover;
     @include media("xl") {
       min-width: 310px;
     }
     @include media("md") {
-      margin: 0;
+      margin-block-end: 40px;
       min-width: 254px;
     }
-  }
-  &__image-container {
-    grid-row: 1/6;
-    grid-column: 2;
-    max-height: 836px;
-    position: relative;
-    @include media("md") {
-      max-height: fit-content;
-      margin: 0 0 40px 30px;
+    @include media("xs") {
+      width: 254px;
+      align-self: flex-end;
     }
   }
   &__card-stiky {
     position: absolute;
+    min-height: 430px;
     bottom: 7%;
-    left: -61.5%;
+    left: 43.7%;
     height: 51.5%;
-    width: 130%;
+    width: 50%;
     @include media("xxl") {
-      left: -36.6%;
+      left: 50%;
+      min-height: 400px;
     }
     @include media("xl") {
-      left: -46.5%;
-      bottom: 14%;
+      left: 52%;
+      bottom: 6%;
+      min-height: 260px;
     }
     @include media("md") {
-      left: -11.5%;
-      bottom: 5%;
-      width: 100%;
+      left: 1%;
+      bottom: 28%;
+      width: calc(100% - 36px);
+      height: 35%;
     }
-    @include media("md") {
-      left: -15.5%;
+    @include media("xs") {
+      left: 6%;
+      bottom: 33%;
+      height: 200px;
     }
   }
   &__bike-name {
@@ -121,7 +125,6 @@
       font-size: 17px;
       line-height: 25px;
       max-width: 250px;
-      // margin-block-end: calc(50vw - 340px);
       margin-block-end: 40px;
     }
     @include media("md") {
@@ -144,7 +147,6 @@
     }
   }
   &__bike-fix {
-    margin: 0 auto;
     @include card;
     position: sticky;
     top: 0;

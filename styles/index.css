@@ -314,6 +314,7 @@
 
 .bike-selection {
   padding-block-start: 20px;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   .bike-selection {
@@ -367,6 +368,9 @@
 }
 .bike-selection__image {
   display: block;
+  grid-row: 1/6;
+  grid-column: 2;
+  max-height: 836px;
   width: 100%;
   object-fit: cover;
 }
@@ -377,50 +381,50 @@
 }
 @media screen and (max-width: 768px) {
   .bike-selection__image {
-    margin: 0;
+    margin-block-end: 40px;
     min-width: 254px;
   }
 }
-.bike-selection__image-container {
-  grid-row: 1/6;
-  grid-column: 2;
-  max-height: 836px;
-  position: relative;
-}
-@media screen and (max-width: 768px) {
-  .bike-selection__image-container {
-    max-height: fit-content;
-    margin: 0 0 40px 30px;
+@media screen and (max-width: 360px) {
+  .bike-selection__image {
+    width: 254px;
+    align-self: flex-end;
   }
 }
 .bike-selection__card-stiky {
   position: absolute;
+  min-height: 430px;
   bottom: 7%;
-  left: -61.5%;
+  left: 43.7%;
   height: 51.5%;
-  width: 130%;
+  width: 50%;
 }
 @media screen and (max-width: 1280px) {
   .bike-selection__card-stiky {
-    left: -36.6%;
+    left: 50%;
+    min-height: 400px;
   }
 }
 @media screen and (max-width: 1024px) {
   .bike-selection__card-stiky {
-    left: -46.5%;
-    bottom: 14%;
+    left: 52%;
+    bottom: 6%;
+    min-height: 260px;
   }
 }
 @media screen and (max-width: 768px) {
   .bike-selection__card-stiky {
-    left: -11.5%;
-    bottom: 5%;
-    width: 100%;
+    left: 1%;
+    bottom: 28%;
+    width: calc(100% - 36px);
+    height: 35%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 360px) {
   .bike-selection__card-stiky {
-    left: -15.5%;
+    left: 6%;
+    bottom: 33%;
+    height: 200px;
   }
 }
 .bike-selection__bike-name {
@@ -512,7 +516,6 @@
   }
 }
 .bike-selection__bike-fix {
-  margin: 0 auto;
   background: #f4f4f4;
   box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
   border-radius: 20px;
@@ -689,7 +692,7 @@
 }
 
 .select-road {
-  padding-block-end: 65px;
+  padding-block-end: 60px;
 }
 @media screen and (max-width: 768px) {
   .select-road {
@@ -753,7 +756,7 @@
   opacity: 0.7;
   margin-block-end: 80px;
   display: none;
-  grid-row: 3/4;
+  grid-row: 4/5;
   grid-column: 1/3;
   max-width: 450px;
 }
@@ -779,34 +782,31 @@
 .select-road__text_visible {
   display: block;
 }
-@media screen and (max-width: 768px) {
-  .select-road {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 .slider {
   width: 100%;
   overflow: hidden;
-  margin-block-end: 50px;
   position: relative;
   grid-row: 2/3;
   grid-column: 1/3;
 }
 @media screen and (max-width: 768px) {
   .slider {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin-block-end: 38px;
   }
 }
 .slider__image {
-  width: 49%;
+  width: calc(50vw - 80px);
+  max-width: 650px;
   margin-inline-end: 40px;
   display: block;
 }
 @media screen and (max-width: 768px) {
   .slider__image {
-    width: 100%;
+    max-width: 700px;
+    width: calc(100vw - 18px);
   }
 }
 .slider::before {
@@ -824,11 +824,18 @@
     height: 34px;
   }
 }
+@media screen and (max-width: 768px) {
+  .slider::before {
+    bottom: 70px;
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+}
 @media screen and (max-width: 360px) {
   .slider::before {
     width: 70px;
     height: 30px;
-    bottom: 11px;
+    bottom: 60px;
   }
 }
 .slider::after {
@@ -841,19 +848,27 @@
   background: no-repeat left bottom var(--road-icon);
   z-index: 2;
 }
+@media screen and (max-width: 768px) {
+  .slider::after {
+    bottom: 80px;
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+}
 @media screen and (max-width: 360px) {
   .slider::after {
-    bottom: 19px;
+    bottom: 70px;
     left: 10px;
     width: 35px;
   }
 }
 .slider__image-container {
   display: flex;
-  width: 100%;
   transform: translate(0, 0);
   transition: transform var(--time-change-image) ease-in-out;
   margin-block-end: 50px;
+  grid-row: 2/3;
+  grid-column: 1/3;
 }
 .slider__arrows-container {
   grid-row: 1/2;
@@ -864,6 +879,14 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-block-end: 40px;
+    margin-block-start: 40px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .slider__arrows-container {
+    margin-block-start: 45px;
+    margin-block-end: 50px;
   }
 }
 .slider__button {
