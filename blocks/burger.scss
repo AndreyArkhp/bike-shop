@@ -28,6 +28,7 @@
     height: 22px;
     background: no-repeat center #{var(--close-icon)};
     transition: opacity 0.2s linear;
+    box-shadow: none;
   }
   &:hover::before {
     opacity: 0.75;

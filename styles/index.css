@@ -71,7 +71,7 @@
 }
 .page__content {
   max-width: 1440px;
-  min-width: 320px;
+  min-width: 284px;
 }
 .page__centering {
   margin: 0 auto;
@@ -203,6 +203,7 @@
   height: 22px;
   background: no-repeat center var(--close-icon);
   transition: opacity 0.2s linear;
+  box-shadow: none;
 }
 .burger:hover::before {
   opacity: 0.75;
@@ -1009,11 +1010,6 @@
     margin-block-end: 45px;
   }
 }
-@media screen and (max-width: 768px) {
-  .bike-cards__slider-visible {
-    margin-block-end: 0;
-  }
-}
 .bike-cards__slider-visible::before {
   display: none;
 }
@@ -1581,6 +1577,13 @@
   grid-row: 3/4;
   grid-column: 2/3;
   margin-inline-start: auto;
+  transition: opacity 0.2s linear;
+}
+.footer__switcher-mini-label_them_dark {
+  background: no-repeat url(../images/them-logo-mini-white.svg);
+}
+.footer__switcher-mini-label:hover {
+  opacity: 0.75;
 }
 @media screen and (max-width: 768px) {
   .footer__switcher-mini-label {

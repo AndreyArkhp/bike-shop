@@ -113,6 +113,15 @@
     grid-row: 3/4;
     grid-column: 2/3;
     margin-inline-start: auto;
+    transition: opacity 0.2s linear;
+    &_them {
+      &_dark {
+        background: no-repeat url(../images/them-logo-mini-white.svg);
+      }
+    }
+    &:hover {
+      opacity: 0.75;
+    }
     @include media("md") {
       display: block;
       &:checked {
