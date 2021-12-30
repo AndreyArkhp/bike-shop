@@ -1,0 +1,172 @@
+.bike-selection {
+  padding-block-start: 20px;
+  position: relative;
+  @include media("xl") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media("md") {
+    padding-block-start: 0;
+  }
+  &__title {
+    max-width: 330px;
+    height: fit-content;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-block-start: 60px;
+    margin-block-end: 50px;
+    @extend %reset-margin-padding;
+    @include font-set(55px, 60px, 700, var(--color-black), 0);
+    @include media("xxl") {
+      max-width: 300px;
+      font-size: 50px;
+      line-height: 55px;
+      margin-block-start: 50px;
+      margin-block-end: 25px;
+    }
+    @include media("xl") {
+      max-width: 240px;
+      font-size: 40px;
+      line-height: 45px;
+      margin-block-start: 20px;
+      margin-block-end: 15px;
+    }
+    @include media("md") {
+      @include font-set(32px, 40px, 700, var(--color-black), -0.5px);
+      margin-block-start: 40px;
+      margin-block-end: 40px;
+      max-width: 170px;
+    }
+  }
+  &__image {
+    display: block;
+    grid-row: 1/6;
+    grid-column: 2;
+    max-height: 836px;
+    width: 100%;
+    object-fit: cover;
+    @include media("xl") {
+      min-width: 310px;
+    }
+    @include media("md") {
+      margin-block-end: 40px;
+      min-width: 254px;
+    }
+    @include media("xs") {
+      width: 254px;
+      align-self: flex-end;
+    }
+  }
+  &__card-stiky {
+    position: absolute;
+    min-height: 430px;
+    bottom: 7%;
+    left: 43.7%;
+    height: 51.5%;
+    width: 40%;
+    @include media("xxl") {
+      left: 50%;
+      min-height: 400px;
+    }
+    @include media("xl") {
+      left: 52%;
+      bottom: 6%;
+      min-height: 260px;
+    }
+    @include media("md") {
+      left: 1%;
+      bottom: 28%;
+      width: calc(100% - 36px);
+      height: 35%;
+    }
+    @include media("xs") {
+      left: 6%;
+      bottom: 33%;
+      height: 200px;
+    }
+  }
+  &__bike-name {
+    grid-row: 4;
+    grid-column: 1;
+    @include font-set(18px, 18px, 400, var(--color-black), 0);
+    @extend %reset-margin-padding;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 220px;
+      width: 132px;
+      height: 2px;
+      background: var(--color-bike-name-line);
+      @include media("xl") {
+        width: calc(55vw - 400px);
+      }
+    }
+    @include media("md") {
+      display: none;
+    }
+    @include media("xl") {
+      margin-block-end: 20px;
+      grid-row: 3;
+      grid-column: 1;
+    }
+  }
+
+  &__text {
+    grid-row: 2;
+    grid-column: 1;
+    max-width: 460px;
+    @include font-set(18px, 28px, 400, var(--color-grey), 0);
+    @extend %reset-margin-padding;
+    opacity: 0.7;
+    margin-block-end: 50px;
+    @include media("xxl") {
+      margin-block-end: 35px;
+      max-width: 360px;
+    }
+    @include media("xl") {
+      font-size: 17px;
+      line-height: 25px;
+      max-width: 250px;
+      margin-block-end: 40px;
+    }
+    @include media("md") {
+      min-width: 100%;
+      font-size: 12px;
+      line-height: 18px;
+      margin-block-end: 40px;
+    }
+  }
+  &__button {
+    grid-row: 3;
+    grid-column: 1;
+    @include media("xl") {
+      grid-row: 5;
+      grid-column: 1;
+      margin: 0;
+    }
+    @include media("xs") {
+      margin-block-end: 40px;
+    }
+  }
+  &__bike-fix {
+    @include card;
+    position: sticky;
+    top: 0;
+    @include media("xxl") {
+      max-width: 365px;
+    }
+    @include media("xl") {
+      max-width: 225px;
+      padding: 20px 40px;
+    }
+    @include media("md") {
+      max-width: 60vw;
+      padding: 14px 35px;
+    }
+    @include media("xs") {
+      max-width: 180px;
+      padding: 10.67px 26.59px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+//Colors
+:root {
+  --color-page: #f4f4f4;
+  --color-switcher-bg: #fff;
+  --color-black: #151515;
+  --color-grey: #222;
+  --color-bike-name-line: #d7d4d4;
+  --color-arrow-bg: rgba(235, 235, 235, 1);
+  --color-arrow-bg-opacity: rgba(235, 235, 235, 0.6);
+  --color-focus: #c7c7c7;
+  --color-footer-bg: #efefef;
+  --color-footer-copyright: #cfcfcf;
+  --color-select-bg: #f4f4f4;
+}
+$color-shadow: rgba(0, 0, 0, 0.44);
+$color-drop-shadow: rgba(0, 0, 0, 0.06);
+$color-card-bg: #f4f4f4;
+$color-grey-lighter: #c4c4c4;
+$color-circle-green: #24b47e;
+$color-button: #24b47e;
+$color-white: #fff;
+$color-line: #e3e3e3;
+
+//sizes media-querys
+$sizes: (
+  "xs": 360px,
+  "md": 768px,
+  "xl": 1024px,
+  "xxl": 1280px,
+);
+
+//switcher-them
+//on:0, off:24px;
+:root {
+  --left: 0;
+}
+
+//url
+:root {
+  --close-icon: url("../images/close.svg");
+  --road-icon: url("../images/highway-line.svg");
+  --arrow-previous: url("../images/arrow-left.svg");
+  --arrow-next: url("../images/arrow-right.svg");
+}
+
+//size button
+$width-button: 180px;
+
+//time to change of image
+:root {
+  --time-change-image: 0.4s;
+}

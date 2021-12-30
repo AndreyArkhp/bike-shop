@@ -1,0 +1,30 @@
+//Fonts
+@mixin font-set($size, $lineHeight, $weight, $color, $ls) {
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: $size;
+  line-height: $lineHeight;
+  font-weight: $weight;
+  color: $color;
+  letter-spacing: $ls;
+}
+
+//Media-querys
+@mixin media($media) {
+  @each $name, $size in $sizes {
+    @if $media == $name {
+      @media screen and (max-width: $size) {
+        @content;
+      }
+    }
+  }
+}
+
+//Image card
+@mixin card {
+  background: $color-card-bg;
+  box-shadow: -20px 60px 220px $color-shadow;
+  border-radius: 20px;
+  padding: 20px 50px;
+  display: block;
+  object-fit: cover;
+}

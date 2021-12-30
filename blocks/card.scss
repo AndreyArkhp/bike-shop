@@ -1,0 +1,5 @@
+.card {
+  max-width: 440px;
+  box-sizing: border-box;
+  @include card;
+}

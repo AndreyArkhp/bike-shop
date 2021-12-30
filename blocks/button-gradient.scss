@@ -1,0 +1,38 @@
+.button-gradient {
+  margin-block-end: 170px;
+  width: $width-button;
+  @extend %reset-margin-padding;
+  width: $width-button;
+  overflow: hidden;
+  position: relative;
+  padding: 16px 0;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  @include font-set(14px, 18px, 600, $color-white, 1px);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    @extend %button-hover;
+    transition: left 0.3s linear;
+    z-index: -1;
+  }
+  &:hover::before {
+    left: 0;
+  }
+  @include media("xxl") {
+    margin-block-end: 6vw;
+  }
+  @include media("md") {
+    width: 100%;
+    font-size: 13px;
+    line-height: 19px;
+  }
+  @include media("xs") {
+    padding: 14px 0;
+  }
+}

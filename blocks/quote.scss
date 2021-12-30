@@ -1,0 +1,97 @@
+.quote {
+  padding-block-start: 120px;
+  padding-block-end: 60px;
+  max-width: 1200px;
+  grid-template-columns: minmax(53%, 650px) minmax(39%, 470px);
+  grid-column-gap: 80px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 18px;
+    width: calc(100% - 36px);
+    height: 1px;
+    background: $color-line;
+    display: none;
+    @include media("md") {
+      display: block;
+    }
+  }
+  &__image {
+    display: block;
+    object-fit: contain;
+    object-position: top;
+    width: 100%;
+    min-width: 284px;
+    min-height: 204px;
+
+    @include media("md") {
+      margin-block-end: 40px;
+      width: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__quote-container {
+    @extend %reset-margin-padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include media("md") {
+      display: block;
+    }
+  }
+  &__quote-text {
+    @extend %reset-margin-padding;
+    @include font-set(34px, 44px, 600, var(--color-black), -0.5px);
+    @include media("xxl") {
+      font-size: 28px;
+      line-height: 34px;
+    }
+    @include media("xl") {
+      font-size: 23px;
+      line-height: 29px;
+      letter-spacing: -0.5px;
+    }
+    @include media("md") {
+      margin-block-end: 38px;
+    }
+  }
+  &__quote-author {
+    @include font-set(20px, 40px, 500, var(--color-black), 0);
+    @include media("md") {
+      font-size: 14px;
+      line-height: 22px;
+      margin-block-end: 4px;
+    }
+  }
+  &__author-profession {
+    @extend %reset-margin-padding;
+    @include font-set(16px, 28px, 400, var(--color-grey), 0);
+    opacity: 0.7;
+    margin-block-end: 4px;
+
+    @include media("xl") {
+      margin-block-end: 10px;
+    }
+    @include media("md") {
+      font-size: 10px;
+      line-height: 16px;
+      margin-block-start: 4px;
+    }
+  }
+  @include media("xxl") {
+    padding-block-start: 100px;
+    grid-template-columns: minmax(54%, 650px) minmax(36%, 470px);
+  }
+  @include media("xl") {
+    padding-block-start: 60px;
+    padding-inline-end: 18px;
+    grid-template-columns: minmax(300px, 650px) minmax(250px, 470px);
+    grid-column-gap: 60px;
+  }
+  @include media("md") {
+    padding-block-end: 35px;
+  }
+}

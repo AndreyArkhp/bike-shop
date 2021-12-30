@@ -1,0 +1,45 @@
+.switcher-thems {
+  width: 140px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  position: relative;
+
+  &__image {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__switcher {
+    width: 44px;
+    height: 24px;
+    background: var(--color-switcher-bg);
+    border-radius: 9999px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 0.2s linear;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      border-radius: 50%;
+      left: var(--left);
+      background: $color-circle-green;
+      width: 20px;
+      height: 20px;
+    }
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  &__checkbox {
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @include media("md") {
+    display: flex;
+  }
+}

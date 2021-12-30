@@ -1,0 +1,106 @@
+.training {
+  padding-block-start: 160px;
+  padding-block-end: 120px;
+  grid-template-columns: 1fr minmax(200px, 580px);
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 33px;
+    left: 18px;
+    display: none;
+    width: calc(100% - 36px);
+    height: 1px;
+    background: $color-line;
+    @include media("md") {
+      display: block;
+    }
+  }
+  @include media("xxl") {
+    padding-block-start: 120px;
+  }
+  @include media("xl") {
+    padding-block-start: 100px;
+    padding-inline-end: 18px;
+    grid-column-gap: 40px;
+  }
+  @include media("md") {
+    padding-block-start: 75px;
+    padding-block-end: 60px;
+  }
+  &__title {
+    @extend %reset-margin-padding;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    @include font-set(55px, 60px, 700, #{var(--color-black)}, -0.5px);
+    margin-block-end: 50px;
+    @include media("xxl") {
+      margin-block-end: 30px;
+      font-size: 50px;
+      line-height: 55px;
+    }
+    @include media("xl") {
+      font-size: 45px;
+      line-height: 50px;
+      margin-block-end: 20px;
+    }
+    @include media("md") {
+      margin-block-end: 40px;
+    }
+    @include media("xs") {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+  &__text {
+    @extend %reset-margin-padding;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    @include font-set(18px, 28px, 400, #{var(--color-grey)}, 0);
+    opacity: 0.7;
+    max-width: 460px;
+    @include media("xxl") {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    @include media("xl") {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include media("md") {
+      margin-block-end: 40px;
+    }
+    @include media("xs") {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+  &__image {
+    display: block;
+    grid-row: 1/5;
+    grid-column: 2/3;
+    width: 100%;
+    @include media("md") {
+      margin-block-end: 40px;
+    }
+  }
+  &__links-container {
+    grid-row: 4/5;
+    grid-column: 1/2;
+  }
+  &__link {
+    text-decoration: none;
+    cursor: pointer;
+    @include font-set(18px, 28px, 600, #{var(--color-black)}, 0);
+    &:hover {
+      opacity: 0.75;
+    }
+    &:first-child {
+      margin-inline-end: 25px;
+    }
+    @include media("xs") {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
